@@ -14,6 +14,7 @@ namespace PPE3_CodeMatters_Github
         [STAThread]
         static void Main()
         {
+            // Sample comments added in the branch you can delete
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new menu());
