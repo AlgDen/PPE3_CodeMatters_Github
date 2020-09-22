@@ -14,6 +14,7 @@ namespace PPE3_CodeMatters_Github
     {
         public menu()
         {
+
             InitializeComponent();
         }
     }
