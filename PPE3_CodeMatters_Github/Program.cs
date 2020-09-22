@@ -14,6 +14,7 @@ namespace PPE3_CodeMatters_Github
         [STAThread]
         static void Main()
         {
+            //to  delete
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new menu());
