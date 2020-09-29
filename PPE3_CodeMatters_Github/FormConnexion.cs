@@ -46,6 +46,7 @@ namespace PPE3_CodeMatters_Github
                 txtIdentifiant.Clear();
                 txtpassword.Clear();
                 txtIdentifiant.Focus();
+                txtpassword.Clear();
             }
         }
 
