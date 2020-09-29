@@ -105,7 +105,7 @@
             this.btnConnexion.TabIndex = 5;
             this.btnConnexion.Text = "CONNEXION";
             this.btnConnexion.UseVisualStyleBackColor = false;
-
+            this.btnConnexion.Click += new System.EventHandler(this.btnConnexion_Click);
             // 
             // lblExit
             // 
@@ -118,7 +118,7 @@
             this.lblExit.Size = new System.Drawing.Size(64, 20);
             this.lblExit.TabIndex = 6;
             this.lblExit.Text = "Quitter";
-
+            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
             // 
             // txtIdentifiant
             // 
@@ -159,7 +159,7 @@
             this.Name = "menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-
+            this.Load += new System.EventHandler(this.menu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
