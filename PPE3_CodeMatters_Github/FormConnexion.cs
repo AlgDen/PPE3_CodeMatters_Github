@@ -10,18 +10,14 @@ using System.Windows.Forms;
 
 namespace PPE3_CodeMatters_Github
 {
-    public partial class menu : Form
+    public partial class FormConnexion : Form
     {
-        public menu()
+        public FormConnexion()
         {
 
             InitializeComponent();
         }
 
-        private void menu_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void lblExit_Click(object sender, EventArgs e)
         {
@@ -30,8 +26,15 @@ namespace PPE3_CodeMatters_Github
 
         private void btnConnexion_Click(object sender, EventArgs e)
         {
-            if (txtIdentifiant.Text == "demo" && txtpassword.Text == "1234")
+            if (txtIdentifiant.Text == "root" && txtpassword.Text == "")
             {
+                FormMenu ouverture = new FormMenu();
+
+
+                ouverture.ShowDialog();
+                this.Hide();
+            
+             
                 
                
 
@@ -44,6 +47,11 @@ namespace PPE3_CodeMatters_Github
                 txtpassword.Clear();
                 txtIdentifiant.Focus();
             }
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

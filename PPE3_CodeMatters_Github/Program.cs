@@ -17,7 +17,7 @@ namespace PPE3_CodeMatters_Github
             //to  delete
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new menu());
+            Application.Run(new FormConnexion());
         }
     }
 }
