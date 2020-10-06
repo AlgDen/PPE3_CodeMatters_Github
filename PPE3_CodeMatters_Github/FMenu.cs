@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace PPE3_CodeMatters_Github
 {
-    public partial class FormMenu : Form
+    public partial class FMenu : Form
     {
-        public FormMenu()
+        public FMenu()
         {
-            InitializeComponent(); //fgfg
+            InitializeComponent();
         }
     }
 }
