@@ -17,6 +17,7 @@ namespace PPE3_CodeMatters_Github
             // Sample comments added in the branch you can delete
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Modele.init();
             Application.Run(new FormConnexion());
         }
     }
