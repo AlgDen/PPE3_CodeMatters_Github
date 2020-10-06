@@ -34,6 +34,7 @@ namespace PPE3_CodeMatters_Github
             if (txtIdentifiant.Text == "root" && txtpassword.Text == "")
             {
                 FormMenu ouverture = new FormMenu();
+                this.Hide();
                 ouverture.ShowDialog();
                
 
@@ -48,10 +49,9 @@ namespace PPE3_CodeMatters_Github
             }
         }
 
+        private void FormConnexion_Load(object sender, EventArgs e)
+        {
 
-
-
-
-
+        }
     }
 }
