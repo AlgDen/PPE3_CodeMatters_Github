@@ -14,7 +14,7 @@ namespace PPE3_CodeMatters_Github
     {
         public FormMenu()
         {
-            InitializeComponent(); //fgfg
+            InitializeComponent(); //fg
         }
     }
 }
