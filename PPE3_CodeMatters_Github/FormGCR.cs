@@ -16,5 +16,12 @@ namespace PPE3_CodeMatters_Github
         {
             InitializeComponent();
         }
+
+        private void FormGCR_Load(object sender, EventArgs e)
+        {
+
+        }
+
+  
     }
 }
