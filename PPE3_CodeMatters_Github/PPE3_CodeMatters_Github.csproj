@@ -64,6 +64,12 @@
     <Compile Include="FormConnexion.Designer.cs">
       <DependentUpon>FormConnexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGCR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGCR.Designer.cs">
+      <DependentUpon>FormGCR.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </Compile>
     <EmbeddedResource Include="FormConnexion.resx">
       <DependentUpon>FormConnexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGCR.resx">
+      <DependentUpon>FormGCR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
@@ -156,6 +165,8 @@
       <DependentUpon>mdlPPE3_CodeMatters.edmx</DependentUpon>
       <LastGenOutput>mdlPPE3_CodeMatters.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\logosansfond.png" />
+    <None Include="Resources\Untitled-11.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
