@@ -14,7 +14,9 @@ namespace PPE3_CodeMatters_Github
     {
         public FormConnexion()
         {
+
             InitializeComponent();
+            //
         }
 
         private void menu_Load(object sender, EventArgs e)
@@ -29,9 +31,11 @@ namespace PPE3_CodeMatters_Github
 
         private void btnConnexion_Click(object sender, EventArgs e)
         {
-            if (txtIdentifiant.Text == "demo" && txtpassword.Text == "1234")
+            if (txtIdentifiant.Text == "root" && txtpassword.Text == "")
             {
-                
+                FormMenu ouverture = new FormMenu();
+                this.Hide();
+                ouverture.ShowDialog();
                
 
             }
@@ -43,6 +47,11 @@ namespace PPE3_CodeMatters_Github
                 txtpassword.Clear();
                 txtIdentifiant.Focus();
             }
+        }
+
+        private void FormConnexion_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
