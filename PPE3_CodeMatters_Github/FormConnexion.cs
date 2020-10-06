@@ -31,9 +31,10 @@ namespace PPE3_CodeMatters_Github
 
         private void btnConnexion_Click(object sender, EventArgs e)
         {
-            if (txtIdentifiant.Text == "demo" && txtpassword.Text == "1234")
+            if (txtIdentifiant.Text == "root" && txtpassword.Text == "")
             {
-                
+                FormMenu ouverture = new FormMenu();
+                ouverture.ShowDialog();
                
 
             }
