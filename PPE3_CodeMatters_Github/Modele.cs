@@ -11,17 +11,47 @@ namespace PPE3_CodeMatters_Github
     {
         private static Visiteur visiteurConnecte;
         private static bool connexionValide;
+        public static string identite;
 
 
         private static CodeMattersDBEntities maConnexion;
 
         public static Visiteur VisiteurConnecte { get => visiteurConnecte; set => visiteurConnecte = value; }
         public static bool ConnexionValide { get => connexionValide; set => connexionValide = value; }
-
         public static void init()
         {
             /* Instantiation d’un objet de la classe typée chaine de connexion SqlConnection */
             maConnexion = new CodeMattersDBEntities();
+        }
+
+        public static void Connexion(string id, string mdp)
+        {
+            Visiteur vi = ListeID(id);
+            if (vi != null)
+            {
+                if(GetMd5Hash(mdp)==vi.password)
+                {
+                    connexionValide = true;
+                }
+            }
+        }
+
+        public static Visiteur ListeID(string id)
+        {
+            identite = id;
+            Visiteur vretour = null;
+            var LQuery = listeVisiteur()
+                .Where(x => x.identifiant == id);
+            if(LQuery.ToList().Count==1)
+            {
+                vretour = (Visiteur)LQuery.ToList()[0];
+            }
+            return vretour;
+        }
+
+        public static bool validConnexion()
+        {
+            return connexionValide;
         }
 
         private static string GetMd5Hash(string PasswdSaisi)
@@ -34,14 +64,6 @@ namespace PPE3_CodeMatters_Github
                 sb.Append(hash[i].ToString("x2"));
             }
             return sb.ToString();
-        }
-
-
-        public static string validConnexion(string id, string mp)
-        {
-            string message = "";
-            // Ecrire le code qui renvoie le message à afficher et mets à jour les variables visiteurConnecte et connexionValide, la comparaison des mots de passes se fera via visiteurConnecte.passwd.Substring(2).Equals(GetMd5Hash(mp))
-            return message;
         }
 
         public static List<Visiteur> listeVisiteur()

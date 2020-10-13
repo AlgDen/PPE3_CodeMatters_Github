@@ -32,5 +32,14 @@ namespace PPE3_CodeMatters_Github
             this.Hide();
             ouverture.ShowDialog();
         }
+
+        private void GestionDesVisiteursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormVisiteur open = new FormVisiteur();
+            open.FormBorderStyle = FormBorderStyle.None;
+            open.TopLevel = false;
+            panel1.Controls.Add(open);
+            open.Show();
+        }
     }
 }

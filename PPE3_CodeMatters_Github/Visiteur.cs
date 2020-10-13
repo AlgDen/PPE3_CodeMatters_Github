@@ -20,6 +20,8 @@ namespace PPE3_CodeMatters_Github
             this.Region = new HashSet<Region>();
             this.Secteur = new HashSet<Secteur>();
             this.Region1 = new HashSet<Region>();
+            this.fichefrais = new HashSet<fichefrais>();
+            this.RAPPORT = new HashSet<RAPPORT>();
         }
     
         public string idVisiteur { get; set; }
@@ -40,5 +42,9 @@ namespace PPE3_CodeMatters_Github
         public virtual ICollection<Secteur> Secteur { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Region> Region1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<fichefrais> fichefrais { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RAPPORT> RAPPORT { get; set; }
     }
 }
