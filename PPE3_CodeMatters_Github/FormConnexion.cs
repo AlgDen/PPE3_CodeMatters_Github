@@ -20,15 +20,6 @@ namespace PPE3_CodeMatters_Github
             //
         }
 
-        private void menu_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void btnConnexion_Click(object sender, EventArgs e)
         {
@@ -46,15 +37,25 @@ namespace PPE3_CodeMatters_Github
             else
             {
                 MessageBox.Show("Identifiant ou mot de passe incorrect, réessayez");
-                txtIdentifiant.Clear();
                 txtpassword.Clear();
-                txtIdentifiant.Focus();
+                txtIdentifiant.Clear();
+                txtpassword.Focus();
             }
         }
 
         public static void ThreadProc()
         {
             Application.Run(new FormMenu());
+        }
+
+        private void BtnQuitter_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void FormConnexion_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

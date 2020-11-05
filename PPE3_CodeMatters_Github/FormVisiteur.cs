@@ -13,6 +13,9 @@ namespace PPE3_CodeMatters_Github
 {
     public partial class FormVisiteur : Form
     {
+
+        private bool fermeture = false;
+
         public FormVisiteur()
         {
             InitializeComponent();
@@ -25,14 +28,21 @@ namespace PPE3_CodeMatters_Github
 
         private void BsVisiteur_CurrentChanged(object sender, EventArgs e)
         {
-            lblNom.Text = ((Visiteur)bsVisiteur.Current).nom;
-            lblPrenom.Text = ((Visiteur)bsVisiteur.Current).prenom;
-            lblVille.Text = ((Visiteur)bsVisiteur.Current).ville;
-            lblCP.Text = ((Visiteur)bsVisiteur.Current).cp;
-            lblNom.Text = ((Visiteur)bsVisiteur.Current).nom;
-            lblRue.Text = ((Visiteur)bsVisiteur.Current).rue;
-            lblEmbauche.Text = ((Visiteur)bsVisiteur.Current).dateEmbauche;
+            if (fermeture) return;
 
+            
+            dgvVisiteur.ColumnCount = 6;
+            dgvVisiteur.ColumnHeadersVisible = true;
+
+            dgvVisiteur.Columns[0].Name = "Nom";
+            dgvVisiteur.Columns[1].Name = "Prénom";
+            dgvVisiteur.Columns[2].Name = "Rue";
+            dgvVisiteur.Columns[3].Name = "CP";
+            dgvVisiteur.Columns[4].Name = "Ville";
+            dgvVisiteur.Columns[5].Name = "Date Embauche";
+
+            bsVisiteur.DataSource = Modele.listeVisiteur();
+            dgvVisiteur.DataSource = bsVisiteur;
         }
     }
 }
