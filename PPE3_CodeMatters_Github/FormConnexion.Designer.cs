@@ -39,21 +39,23 @@
             // 
             // txtIdentifiant
             // 
-            this.txtIdentifiant.Location = new System.Drawing.Point(107, 84);
+            this.txtIdentifiant.Location = new System.Drawing.Point(103, 88);
             this.txtIdentifiant.Name = "txtIdentifiant";
             this.txtIdentifiant.Size = new System.Drawing.Size(162, 20);
             this.txtIdentifiant.TabIndex = 7;
+            this.txtIdentifiant.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtIdentifiant_KeyDown);
             // 
             // txtpassword
             // 
-            this.txtpassword.Location = new System.Drawing.Point(107, 127);
+            this.txtpassword.Location = new System.Drawing.Point(103, 131);
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.Size = new System.Drawing.Size(162, 20);
             this.txtpassword.TabIndex = 8;
+            this.txtpassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txtpassword_KeyDown);
             // 
             // btnConnexion
             // 
-            this.btnConnexion.Location = new System.Drawing.Point(107, 174);
+            this.btnConnexion.Location = new System.Drawing.Point(103, 178);
             this.btnConnexion.Name = "btnConnexion";
             this.btnConnexion.Size = new System.Drawing.Size(75, 23);
             this.btnConnexion.TabIndex = 9;
@@ -63,7 +65,7 @@
             // 
             // btnQuitter
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(194, 174);
+            this.btnQuitter.Location = new System.Drawing.Point(190, 178);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(75, 23);
             this.btnQuitter.TabIndex = 10;
@@ -74,7 +76,7 @@
             // lblIdentifiant
             // 
             this.lblIdentifiant.AutoSize = true;
-            this.lblIdentifiant.Location = new System.Drawing.Point(33, 87);
+            this.lblIdentifiant.Location = new System.Drawing.Point(151, 72);
             this.lblIdentifiant.Name = "lblIdentifiant";
             this.lblIdentifiant.Size = new System.Drawing.Size(62, 13);
             this.lblIdentifiant.TabIndex = 11;
@@ -83,7 +85,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(33, 130);
+            this.lblPassword.Location = new System.Drawing.Point(151, 115);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(62, 13);
             this.lblPassword.TabIndex = 12;
@@ -93,7 +95,7 @@
             // 
             this.lblGSB.AutoSize = true;
             this.lblGSB.Font = new System.Drawing.Font("OpenSymbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGSB.Location = new System.Drawing.Point(151, 28);
+            this.lblGSB.Location = new System.Drawing.Point(146, 18);
             this.lblGSB.Name = "lblGSB";
             this.lblGSB.Size = new System.Drawing.Size(66, 30);
             this.lblGSB.TabIndex = 13;

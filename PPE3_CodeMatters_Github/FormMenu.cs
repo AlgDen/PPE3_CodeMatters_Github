@@ -35,10 +35,12 @@ namespace PPE3_CodeMatters_Github
 
         private void GestionDesVisiteursToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormVisiteur open = new FormVisiteur();
+            /*FormVisiteur open = new FormVisiteur();
             open.FormBorderStyle = FormBorderStyle.None;
             open.TopLevel = false;
             panel1.Controls.Add(open);
+            open.Show();*/
+            FormVisiteur open = new FormVisiteur();
             open.Show();
         }
     }

@@ -26,14 +26,39 @@ namespace PPE3_CodeMatters_Github
 
         public static void Connexion(string id, string mdp)
         {
-            Visiteur vi = ListeID(id);
-            if (vi != null)
+            VisiteurConnecte = ListeID(id);
+            if (VisiteurConnecte != null)
             {
-                if(GetMd5Hash(mdp)==vi.password)
+                if(GetMd5Hash(mdp)==VisiteurConnecte.password)
                 {
                     connexionValide = true;
                 }
             }
+        }
+
+        public static Visiteur ViConnecte()
+        {
+            return VisiteurConnecte;
+        }
+
+        public static bool ModifVisiteur(string nom, string prenom, string rue, string cp, string ville, string dateEmbauche)
+        {
+            bool vretour = true;
+            try
+            {
+                VisiteurConnecte.nom = nom;
+                VisiteurConnecte.prenom = prenom;
+                VisiteurConnecte.rue = rue;
+                VisiteurConnecte.cp = cp;
+                VisiteurConnecte.ville = ville;
+                VisiteurConnecte.dateEmbauche = dateEmbauche;
+                maConnexion.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                vretour = false;
+            }
+            return vretour;
         }
 
         public static Visiteur ListeID(string id)
@@ -54,7 +79,13 @@ namespace PPE3_CodeMatters_Github
             return connexionValide;
         }
 
-        private static string GetMd5Hash(string PasswdSaisi)
+        public static Visiteur VisiteurParID(int id)
+        {
+            Visiteur v = maConnexion.Visiteur.Find(id);
+            return v;
+        }
+
+        public static string GetMd5Hash(string PasswdSaisi)
         {
             byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(PasswdSaisi);
             byte[] hash = (MD5.Create()).ComputeHash(inputBytes);
@@ -70,6 +101,7 @@ namespace PPE3_CodeMatters_Github
         {
             return maConnexion.Visiteur.ToList();
         }
+       
 
 
 

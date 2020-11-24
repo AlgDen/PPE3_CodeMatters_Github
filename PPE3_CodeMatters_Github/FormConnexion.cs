@@ -17,9 +17,12 @@ namespace PPE3_CodeMatters_Github
         {
 
             InitializeComponent();
-            //
         }
 
+        private void enter_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
 
         private void btnConnexion_Click(object sender, EventArgs e)
         {
@@ -56,6 +59,22 @@ namespace PPE3_CodeMatters_Github
         private void FormConnexion_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void TxtIdentifiant_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btnConnexion_Click(this, new EventArgs());
+            }
+        }
+
+        private void Txtpassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnConnexion_Click(this, new EventArgs());
+            }
         }
     }
 }

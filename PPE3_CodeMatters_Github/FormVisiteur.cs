@@ -21,28 +21,96 @@ namespace PPE3_CodeMatters_Github
             InitializeComponent();
         }
 
+
         private void FormVisiteur_Load(object sender, EventArgs e)
         {
-            bsVisiteur.DataSource = Modele.listeVisiteur();
+            bsVisiteur.DataSource = Modele.ViConnecte();
         }
 
         private void BsVisiteur_CurrentChanged(object sender, EventArgs e)
         {
-            if (fermeture) return;
+            txtNom.Text = ((Visiteur)bsVisiteur.Current).nom;
+            txtPrenom.Text = ((Visiteur)bsVisiteur.Current).prenom;
+            txtRue.Text = ((Visiteur)bsVisiteur.Current).rue;
+            txtCP.Text = ((Visiteur)bsVisiteur.Current).cp;
+            txtVille.Text = ((Visiteur)bsVisiteur.Current).ville;
+            txtEmbauche.Text = ((Visiteur)bsVisiteur.Current).dateEmbauche;
+        }
 
-            
-            dgvVisiteur.ColumnCount = 6;
-            dgvVisiteur.ColumnHeadersVisible = true;
+        private void BtnModif_Click(object sender, EventArgs e)
+        {
+            // DEVIENT FALSE
+            btnModif.Visible = false;
+            btnModifMDP.Visible = false;
 
-            dgvVisiteur.Columns[0].Name = "Nom";
-            dgvVisiteur.Columns[1].Name = "Prénom";
-            dgvVisiteur.Columns[2].Name = "Rue";
-            dgvVisiteur.Columns[3].Name = "CP";
-            dgvVisiteur.Columns[4].Name = "Ville";
-            dgvVisiteur.Columns[5].Name = "Date Embauche";
+            // DEVIENT TRUE
+            btnValiderModif.Visible = true;
+            btnAnnuler.Visible = true;
 
-            bsVisiteur.DataSource = Modele.listeVisiteur();
-            dgvVisiteur.DataSource = bsVisiteur;
+            txtNom.Enabled = true;
+            txtPrenom.Enabled = true;
+            txtRue.Enabled = true;
+            txtEmbauche.Enabled = false;
+            txtCP.Enabled = true;
+            txtVille.Enabled = true;
+        }
+
+        private void BtnValiderModif_Click(object sender, EventArgs e)
+        {
+            if(Modele.ModifVisiteur(txtNom.Text, txtPrenom.Text, txtRue.Text, txtCP.Text, txtVille.Text, txtEmbauche.Text))
+            {
+                lblNotif.Text="Les modifications ont été enregistrées.";
+                lblNotif.BackColor = Color.Green;
+                MessageBox.Show(lblNotif.Text, "Modification", MessageBoxButtons.OK);
+                
+                // DEVIENT TRUE
+                btnModif.Visible = true;
+                btnModifMDP.Visible = true;
+
+                // DEVIENT FALSE
+                btnValiderModif.Visible = false;
+                btnAnnuler.Visible = false;
+
+                txtNom.Enabled = false;
+                txtPrenom.Enabled = false;
+                txtRue.Enabled = false;
+                txtCP.Enabled = false;
+                txtVille.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Erreur dans la modification.", "Modification", MessageBoxButtons.OK);
+            }
+        }
+
+        private void BtnAnnuler_Click(object sender, EventArgs e)
+        {
+            // DEVIENT TRUE
+            btnModif.Visible = true;
+            btnModifMDP.Visible = true;
+
+            // DEVIENT FALSE
+            btnValiderModif.Visible = false;
+            btnAnnuler.Visible = false;
+
+            txtNom.Enabled = false;
+            txtPrenom.Enabled = false;
+            txtRue.Enabled = false;
+            txtCP.Enabled = false;
+            txtVille.Enabled = false;
+
+            txtNom.Text = ((Visiteur)bsVisiteur.Current).nom;
+            txtPrenom.Text = ((Visiteur)bsVisiteur.Current).prenom;
+            txtRue.Text = ((Visiteur)bsVisiteur.Current).rue;
+            txtCP.Text = ((Visiteur)bsVisiteur.Current).cp;
+            txtVille.Text = ((Visiteur)bsVisiteur.Current).ville;
+            txtEmbauche.Text = ((Visiteur)bsVisiteur.Current).dateEmbauche;
+        }
+
+        private void BtnModifMDP_Click(object sender, EventArgs e)
+        {
+            FModifMDP open = new FModifMDP();
+            open.Show();
         }
     }
 }
