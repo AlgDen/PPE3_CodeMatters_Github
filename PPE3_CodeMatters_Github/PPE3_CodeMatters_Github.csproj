@@ -220,6 +220,17 @@
       <DependentUpon>mdlPPE3_CodeMatters.edmx</DependentUpon>
       <LastGenOutput>mdlPPE3_CodeMatters.cs</LastGenOutput>
     </Content>
+    <Content Include="Resources\Scripts\1.Création_Visiteurs-Secteurs-Regions.sql" />
+    <Content Include="Resources\Scripts\10.Rapports de visite et Offrir.sql" />
+    <Content Include="Resources\Scripts\2.Insertion_VisiteursCryptés.sql" />
+    <Content Include="Resources\Scripts\2b_LignesVisiteurs non cryptés.sql" />
+    <Content Include="Resources\Scripts\3.Test_Visiteur-Travailler-Secteur et Région.sql" />
+    <Content Include="Resources\Scripts\4.Création_Gestion Frais.sql" />
+    <Content Include="Resources\Scripts\5.Insertion_FraisForfait et Etat.sql" />
+    <Content Include="Resources\Scripts\6.Creation_Médicament-Medecin-Famille-Rapport-Offrir.sql" />
+    <Content Include="Resources\Scripts\7.Insertion_Famille-Spécialité-Motif.sql" />
+    <Content Include="Resources\Scripts\8.Insertion_Médicament.sql" />
+    <Content Include="Resources\Scripts\9.Insertion_Médecin.sql" />
     <None Include="Resources\logosansfond.png" />
     <None Include="Resources\Untitled-11.png" />
   </ItemGroup>

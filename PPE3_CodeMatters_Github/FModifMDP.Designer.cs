@@ -29,34 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblNewMDP = new System.Windows.Forms.Label();
-            this.lblVerifNewMDP = new System.Windows.Forms.Label();
             this.txtNewMDP = new System.Windows.Forms.TextBox();
             this.txtVerifMDP = new System.Windows.Forms.TextBox();
             this.lblNomPage = new System.Windows.Forms.Label();
             this.btnValider = new System.Windows.Forms.Button();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.bsVisiteur = new System.Windows.Forms.BindingSource(this.components);
+            this.lblVerifNewMDP = new System.Windows.Forms.Label();
+            this.lblNewMDP = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblNewMDP
-            // 
-            this.lblNewMDP.AutoSize = true;
-            this.lblNewMDP.Location = new System.Drawing.Point(12, 76);
-            this.lblNewMDP.Name = "lblNewMDP";
-            this.lblNewMDP.Size = new System.Drawing.Size(106, 13);
-            this.lblNewMDP.TabIndex = 0;
-            this.lblNewMDP.Text = "Nouveau Password :";
-            // 
-            // lblVerifNewMDP
-            // 
-            this.lblVerifNewMDP.AutoSize = true;
-            this.lblVerifNewMDP.Location = new System.Drawing.Point(12, 135);
-            this.lblVerifNewMDP.Name = "lblVerifNewMDP";
-            this.lblVerifNewMDP.Size = new System.Drawing.Size(165, 13);
-            this.lblVerifNewMDP.TabIndex = 1;
-            this.lblVerifNewMDP.Text = "Confirmation nouveau Password :";
             // 
             // txtNewMDP
             // 
@@ -102,6 +84,24 @@
             this.btnAnnuler.UseVisualStyleBackColor = true;
             this.btnAnnuler.Click += new System.EventHandler(this.BtnAnnuler_Click);
             // 
+            // lblVerifNewMDP
+            // 
+            this.lblVerifNewMDP.AutoSize = true;
+            this.lblVerifNewMDP.Location = new System.Drawing.Point(12, 135);
+            this.lblVerifNewMDP.Name = "lblVerifNewMDP";
+            this.lblVerifNewMDP.Size = new System.Drawing.Size(165, 13);
+            this.lblVerifNewMDP.TabIndex = 1;
+            this.lblVerifNewMDP.Text = "Confirmation nouveau Password :";
+            // 
+            // lblNewMDP
+            // 
+            this.lblNewMDP.AutoSize = true;
+            this.lblNewMDP.Location = new System.Drawing.Point(12, 76);
+            this.lblNewMDP.Name = "lblNewMDP";
+            this.lblNewMDP.Size = new System.Drawing.Size(106, 13);
+            this.lblNewMDP.TabIndex = 0;
+            this.lblNewMDP.Text = "Nouveau Password :";
+            // 
             // FModifMDP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,14 +124,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblNewMDP;
-        private System.Windows.Forms.Label lblVerifNewMDP;
         private System.Windows.Forms.TextBox txtNewMDP;
         private System.Windows.Forms.TextBox txtVerifMDP;
         private System.Windows.Forms.Label lblNomPage;
         private System.Windows.Forms.Button btnValider;
         private System.Windows.Forms.Button btnAnnuler;
         private System.Windows.Forms.BindingSource bsVisiteur;
+        private System.Windows.Forms.Label lblVerifNewMDP;
+        private System.Windows.Forms.Label lblNewMDP;
     }
 }

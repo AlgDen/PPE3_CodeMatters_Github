@@ -61,6 +61,22 @@ namespace PPE3_CodeMatters_Github
             return vretour;
         }
 
+        public static bool ModifMDP(string mdp)
+        {
+            bool vretour = true;
+            try
+            {
+                mdp = GetMd5Hash(mdp);
+                VisiteurConnecte.password = mdp;
+                maConnexion.SaveChanges();
+            }
+            catch(Exception e)
+            {
+                vretour = false;
+            }
+            return vretour;
+        }
+
         public static Visiteur ListeID(string id)
         {
             identite = id;
@@ -74,6 +90,18 @@ namespace PPE3_CodeMatters_Github
             return vretour;
         }
 
+
+        public static Region responsableRegion(string id)
+        {
+            Region vretour = null;
+
+            var query = listeRegion()
+                .Where(x => x.idVisiteur == id)
+                .Select(x => new { x.libRegion})
+
+
+        }
+
         public static bool validConnexion()
         {
             return connexionValide;
@@ -85,7 +113,7 @@ namespace PPE3_CodeMatters_Github
             return v;
         }
 
-        public static string GetMd5Hash(string PasswdSaisi)
+        private static string GetMd5Hash(string PasswdSaisi)
         {
             byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(PasswdSaisi);
             byte[] hash = (MD5.Create()).ComputeHash(inputBytes);
@@ -102,6 +130,10 @@ namespace PPE3_CodeMatters_Github
             return maConnexion.Visiteur.ToList();
         }
        
+        public static List<Region> listeRegion()
+        {
+            return maConnexion.Region.ToList();
+        }
 
 
 

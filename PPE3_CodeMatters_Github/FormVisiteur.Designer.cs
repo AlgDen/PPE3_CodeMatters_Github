@@ -48,7 +48,9 @@
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.lblNotif = new System.Windows.Forms.Label();
             this.btnModifMDP = new System.Windows.Forms.Button();
+            this.dgvResponsabilite = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResponsabilite)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInfos
@@ -57,10 +59,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblInfos.AutoSize = true;
-            this.lblInfos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfos.Location = new System.Drawing.Point(12, 9);
+            this.lblInfos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfos.Location = new System.Drawing.Point(159, 20);
             this.lblInfos.Name = "lblInfos";
-            this.lblInfos.Size = new System.Drawing.Size(128, 20);
+            this.lblInfos.Size = new System.Drawing.Size(149, 24);
             this.lblInfos.TabIndex = 0;
             this.lblInfos.Text = "Vos informations";
             // 
@@ -71,7 +73,7 @@
             // txtNom
             // 
             this.txtNom.Enabled = false;
-            this.txtNom.Location = new System.Drawing.Point(115, 80);
+            this.txtNom.Location = new System.Drawing.Point(97, 260);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(100, 20);
             this.txtNom.TabIndex = 1;
@@ -79,7 +81,7 @@
             // txtPrenom
             // 
             this.txtPrenom.Enabled = false;
-            this.txtPrenom.Location = new System.Drawing.Point(115, 123);
+            this.txtPrenom.Location = new System.Drawing.Point(97, 303);
             this.txtPrenom.Name = "txtPrenom";
             this.txtPrenom.Size = new System.Drawing.Size(100, 20);
             this.txtPrenom.TabIndex = 2;
@@ -87,7 +89,7 @@
             // txtRue
             // 
             this.txtRue.Enabled = false;
-            this.txtRue.Location = new System.Drawing.Point(115, 172);
+            this.txtRue.Location = new System.Drawing.Point(97, 347);
             this.txtRue.Name = "txtRue";
             this.txtRue.Size = new System.Drawing.Size(100, 20);
             this.txtRue.TabIndex = 3;
@@ -95,7 +97,7 @@
             // txtEmbauche
             // 
             this.txtEmbauche.Enabled = false;
-            this.txtEmbauche.Location = new System.Drawing.Point(348, 172);
+            this.txtEmbauche.Location = new System.Drawing.Point(330, 347);
             this.txtEmbauche.Name = "txtEmbauche";
             this.txtEmbauche.Size = new System.Drawing.Size(100, 20);
             this.txtEmbauche.TabIndex = 4;
@@ -103,7 +105,7 @@
             // txtCP
             // 
             this.txtCP.Enabled = false;
-            this.txtCP.Location = new System.Drawing.Point(348, 80);
+            this.txtCP.Location = new System.Drawing.Point(330, 260);
             this.txtCP.Name = "txtCP";
             this.txtCP.Size = new System.Drawing.Size(100, 20);
             this.txtCP.TabIndex = 5;
@@ -111,7 +113,7 @@
             // txtVille
             // 
             this.txtVille.Enabled = false;
-            this.txtVille.Location = new System.Drawing.Point(348, 123);
+            this.txtVille.Location = new System.Drawing.Point(330, 303);
             this.txtVille.Name = "txtVille";
             this.txtVille.Size = new System.Drawing.Size(100, 20);
             this.txtVille.TabIndex = 6;
@@ -119,7 +121,7 @@
             // lblNom
             // 
             this.lblNom.AutoSize = true;
-            this.lblNom.Location = new System.Drawing.Point(52, 83);
+            this.lblNom.Location = new System.Drawing.Point(34, 263);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(35, 13);
             this.lblNom.TabIndex = 7;
@@ -128,7 +130,7 @@
             // lblPrenom
             // 
             this.lblPrenom.AutoSize = true;
-            this.lblPrenom.Location = new System.Drawing.Point(52, 126);
+            this.lblPrenom.Location = new System.Drawing.Point(34, 306);
             this.lblPrenom.Name = "lblPrenom";
             this.lblPrenom.Size = new System.Drawing.Size(49, 13);
             this.lblPrenom.TabIndex = 8;
@@ -137,7 +139,7 @@
             // lblRue
             // 
             this.lblRue.AutoSize = true;
-            this.lblRue.Location = new System.Drawing.Point(54, 175);
+            this.lblRue.Location = new System.Drawing.Point(36, 350);
             this.lblRue.Name = "lblRue";
             this.lblRue.Size = new System.Drawing.Size(33, 13);
             this.lblRue.TabIndex = 9;
@@ -146,7 +148,7 @@
             // lblCP
             // 
             this.lblCP.AutoSize = true;
-            this.lblCP.Location = new System.Drawing.Point(268, 83);
+            this.lblCP.Location = new System.Drawing.Point(250, 263);
             this.lblCP.Name = "lblCP";
             this.lblCP.Size = new System.Drawing.Size(70, 13);
             this.lblCP.TabIndex = 10;
@@ -155,7 +157,7 @@
             // lblEmbauche
             // 
             this.lblEmbauche.AutoSize = true;
-            this.lblEmbauche.Location = new System.Drawing.Point(242, 175);
+            this.lblEmbauche.Location = new System.Drawing.Point(224, 350);
             this.lblEmbauche.Name = "lblEmbauche";
             this.lblEmbauche.Size = new System.Drawing.Size(100, 13);
             this.lblEmbauche.TabIndex = 11;
@@ -164,7 +166,7 @@
             // lblVille
             // 
             this.lblVille.AutoSize = true;
-            this.lblVille.Location = new System.Drawing.Point(283, 126);
+            this.lblVille.Location = new System.Drawing.Point(265, 306);
             this.lblVille.Name = "lblVille";
             this.lblVille.Size = new System.Drawing.Size(32, 13);
             this.lblVille.TabIndex = 12;
@@ -172,7 +174,7 @@
             // 
             // btnValiderModif
             // 
-            this.btnValiderModif.Location = new System.Drawing.Point(271, 235);
+            this.btnValiderModif.Location = new System.Drawing.Point(253, 411);
             this.btnValiderModif.Name = "btnValiderModif";
             this.btnValiderModif.Size = new System.Drawing.Size(75, 23);
             this.btnValiderModif.TabIndex = 14;
@@ -183,7 +185,7 @@
             // 
             // btnModif
             // 
-            this.btnModif.Location = new System.Drawing.Point(159, 235);
+            this.btnModif.Location = new System.Drawing.Point(141, 411);
             this.btnModif.Name = "btnModif";
             this.btnModif.Size = new System.Drawing.Size(75, 23);
             this.btnModif.TabIndex = 15;
@@ -193,7 +195,7 @@
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(159, 235);
+            this.btnAnnuler.Location = new System.Drawing.Point(141, 411);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
             this.btnAnnuler.TabIndex = 16;
@@ -205,7 +207,7 @@
             // lblNotif
             // 
             this.lblNotif.AutoSize = true;
-            this.lblNotif.Location = new System.Drawing.Point(52, 235);
+            this.lblNotif.Location = new System.Drawing.Point(34, 411);
             this.lblNotif.Name = "lblNotif";
             this.lblNotif.Size = new System.Drawing.Size(35, 13);
             this.lblNotif.TabIndex = 17;
@@ -214,7 +216,7 @@
             // 
             // btnModifMDP
             // 
-            this.btnModifMDP.Location = new System.Drawing.Point(271, 235);
+            this.btnModifMDP.Location = new System.Drawing.Point(253, 411);
             this.btnModifMDP.Name = "btnModifMDP";
             this.btnModifMDP.Size = new System.Drawing.Size(107, 23);
             this.btnModifMDP.TabIndex = 18;
@@ -222,11 +224,20 @@
             this.btnModifMDP.UseVisualStyleBackColor = true;
             this.btnModifMDP.Click += new System.EventHandler(this.BtnModifMDP_Click);
             // 
+            // dgvResponsabilite
+            // 
+            this.dgvResponsabilite.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResponsabilite.Location = new System.Drawing.Point(50, 69);
+            this.dgvResponsabilite.Name = "dgvResponsabilite";
+            this.dgvResponsabilite.Size = new System.Drawing.Size(378, 150);
+            this.dgvResponsabilite.TabIndex = 19;
+            // 
             // FormVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(515, 280);
+            this.ClientSize = new System.Drawing.Size(486, 462);
+            this.Controls.Add(this.dgvResponsabilite);
             this.Controls.Add(this.btnModifMDP);
             this.Controls.Add(this.lblNotif);
             this.Controls.Add(this.btnAnnuler);
@@ -249,6 +260,7 @@
             this.Text = "FormVisiteur";
             this.Load += new System.EventHandler(this.FormVisiteur_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResponsabilite)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +287,6 @@
         private System.Windows.Forms.Button btnAnnuler;
         private System.Windows.Forms.Label lblNotif;
         private System.Windows.Forms.Button btnModifMDP;
+        private System.Windows.Forms.DataGridView dgvResponsabilite;
     }
 }

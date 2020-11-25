@@ -25,6 +25,7 @@ namespace PPE3_CodeMatters_Github
         private void FormVisiteur_Load(object sender, EventArgs e)
         {
             bsVisiteur.DataSource = Modele.ViConnecte();
+            
         }
 
         private void BsVisiteur_CurrentChanged(object sender, EventArgs e)
@@ -35,6 +36,14 @@ namespace PPE3_CodeMatters_Github
             txtCP.Text = ((Visiteur)bsVisiteur.Current).cp;
             txtVille.Text = ((Visiteur)bsVisiteur.Current).ville;
             txtEmbauche.Text = ((Visiteur)bsVisiteur.Current).dateEmbauche;
+
+            dgvResponsabilite.Columns[0].HeaderText = "Région";
+            dgvResponsabilite.Columns[1].HeaderText = "Secteur";
+
+            dgvResponsabilite.Columns[0].DisplayIndex = 0;
+            
+
+
         }
 
         private void BtnModif_Click(object sender, EventArgs e)
@@ -112,5 +121,7 @@ namespace PPE3_CodeMatters_Github
             FModifMDP open = new FModifMDP();
             open.Show();
         }
+
+
     }
 }

@@ -1,0 +1,48 @@
+insert into FAMILLE values
+('AA', 'Antalgiques en association'),
+('AAA','Antalgiques antipyréques en association'),
+('AAC','Antidépresseur d action centrale'),
+('AAH','Antivertigineux antihistaminique H1'),
+('ABA','Antibiotique antituberculeux'),
+('ABC','Antibiotique antiacnénique local'),
+('ABP','Antibiotique de la famille des béta-lactamines -pénicilline A-'),
+('AFC','Antibiotique de la famille des cyclines'),
+('AFM','Antibiotique de la famille des macrolides'),
+('AH', 'Antihistaminique H1 local'),
+('AIM','Antidépresseur imipraminique -tricyclique-'),
+('AIN','Antidépresseur inhibiteur sélectif de la recapture de la sétonine'),
+('ALO','Antibiotique local -ORL-'),
+('ANS','Antidépresseur IMAO non sélectif'),
+('AO', 'Antibiotique ophtalmique'),
+('AP', 'Antipsychotique normothymique'),
+('AUM','Antibiotique urinaire minute'),
+('CRT','Corticoide, antibiotique et antifongique à usage local'),
+('HYP','Hypnotique antihistaminique'),
+('PSA','Psychostimulant antiasthésique');
+
+INSERT INTO SPECIALITE (idSpecialite, libSpecialite) VALUES
+('GEN','GENERALISTE'),
+('PSY','PSYCHIATRE'),
+('INF','INFIRMIER'),
+('CHC','CHEF DE CLINIQUE'),
+('OBS','OBSTETRICIEN'),
+('CHR','CHIRURGIEN'),
+('MAS','MEDECINE APPLIQUEE AUX SPORTS'),
+('HOM','HOMEOPATHE'),
+('URG','URGENTISTE'),
+('ACU','ACUPONCTEUR'),
+('ALL','ALLERGOLOGUE'),
+('GER','GERONTOLOGUE'),
+('ANG','ANGEIOLOGUE'),
+('OST','OSTEOPATHE'),
+('CAR','CARDIOLOGUE');
+
+INSERT INTO MOTIF (libMotif) VALUES
+('Visite semestrielle'),
+('Présentation nouveau médicament'),
+('Sollicitation du médecin'),
+('Défaut de prescription'),
+('Installation nouvelle'),
+('Recommandation de confrère'),
+('Prise de contact'),
+('Autre motif');

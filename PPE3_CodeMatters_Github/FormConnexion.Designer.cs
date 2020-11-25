@@ -49,6 +49,7 @@
             // 
             this.txtpassword.Location = new System.Drawing.Point(103, 131);
             this.txtpassword.Name = "txtpassword";
+            this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(162, 20);
             this.txtpassword.TabIndex = 8;
             this.txtpassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txtpassword_KeyDown);
@@ -94,10 +95,10 @@
             // lblGSB
             // 
             this.lblGSB.AutoSize = true;
-            this.lblGSB.Font = new System.Drawing.Font("OpenSymbol", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGSB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGSB.Location = new System.Drawing.Point(146, 18);
             this.lblGSB.Name = "lblGSB";
-            this.lblGSB.Size = new System.Drawing.Size(66, 30);
+            this.lblGSB.Size = new System.Drawing.Size(66, 29);
             this.lblGSB.TabIndex = 13;
             this.lblGSB.Text = "GSB";
             // 

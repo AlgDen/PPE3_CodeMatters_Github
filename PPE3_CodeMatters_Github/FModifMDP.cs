@@ -26,10 +26,10 @@ namespace PPE3_CodeMatters_Github
         {
             if(txtNewMDP.Text == txtVerifMDP.Text)
             {
-                ((Visiteur)bsVisiteur.Current).password = Modele.GetMd5Hash(txtNewMDP.Text);
-                if ()
+                if (Modele.ModifMDP(txtNewMDP.Text))
                 {
                     MessageBox.Show("Le mot de passe a été modifié.", "Succès", MessageBoxButtons.OK);
+                    this.Close();
                 }
                 else
                 {
