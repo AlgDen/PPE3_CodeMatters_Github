@@ -49,8 +49,16 @@
             this.lblNotif = new System.Windows.Forms.Label();
             this.btnModifMDP = new System.Windows.Forms.Button();
             this.dgvResponsabilite = new System.Windows.Forms.DataGridView();
+            this.lblTravail = new System.Windows.Forms.Label();
+            this.linklblResRegion = new System.Windows.Forms.LinkLabel();
+            this.bsResRegion = new System.Windows.Forms.BindingSource(this.components);
+            this.bsTravailRegion = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvResRegion = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResponsabilite)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsResRegion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTravailRegion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResRegion)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInfos
@@ -227,16 +235,48 @@
             // dgvResponsabilite
             // 
             this.dgvResponsabilite.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResponsabilite.Location = new System.Drawing.Point(50, 69);
+            this.dgvResponsabilite.Location = new System.Drawing.Point(50, 68);
             this.dgvResponsabilite.Name = "dgvResponsabilite";
             this.dgvResponsabilite.Size = new System.Drawing.Size(378, 150);
             this.dgvResponsabilite.TabIndex = 19;
+            // 
+            // lblTravail
+            // 
+            this.lblTravail.AutoSize = true;
+            this.lblTravail.Location = new System.Drawing.Point(48, 52);
+            this.lblTravail.Name = "lblTravail";
+            this.lblTravail.Size = new System.Drawing.Size(35, 13);
+            this.lblTravail.TabIndex = 20;
+            this.lblTravail.Text = "label1";
+            // 
+            // linklblResRegion
+            // 
+            this.linklblResRegion.AutoSize = true;
+            this.linklblResRegion.Location = new System.Drawing.Point(47, 221);
+            this.linklblResRegion.Name = "linklblResRegion";
+            this.linklblResRegion.Size = new System.Drawing.Size(55, 13);
+            this.linklblResRegion.TabIndex = 21;
+            this.linklblResRegion.TabStop = true;
+            this.linklblResRegion.Text = "linkLabel1";
+            this.linklblResRegion.Visible = false;
+            // 
+            // dgvResRegion
+            // 
+            this.dgvResRegion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResRegion.Location = new System.Drawing.Point(131, 221);
+            this.dgvResRegion.Name = "dgvResRegion";
+            this.dgvResRegion.Size = new System.Drawing.Size(117, 13);
+            this.dgvResRegion.TabIndex = 22;
+            this.dgvResRegion.Visible = false;
             // 
             // FormVisiteur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 462);
+            this.Controls.Add(this.dgvResRegion);
+            this.Controls.Add(this.linklblResRegion);
+            this.Controls.Add(this.lblTravail);
             this.Controls.Add(this.dgvResponsabilite);
             this.Controls.Add(this.btnModifMDP);
             this.Controls.Add(this.lblNotif);
@@ -261,6 +301,9 @@
             this.Load += new System.EventHandler(this.FormVisiteur_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResponsabilite)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsResRegion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsTravailRegion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResRegion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,5 +331,10 @@
         private System.Windows.Forms.Label lblNotif;
         private System.Windows.Forms.Button btnModifMDP;
         private System.Windows.Forms.DataGridView dgvResponsabilite;
+        private System.Windows.Forms.Label lblTravail;
+        private System.Windows.Forms.LinkLabel linklblResRegion;
+        private System.Windows.Forms.BindingSource bsResRegion;
+        private System.Windows.Forms.BindingSource bsTravailRegion;
+        private System.Windows.Forms.DataGridView dgvResRegion;
     }
 }

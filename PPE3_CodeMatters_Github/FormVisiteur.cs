@@ -36,11 +36,49 @@ namespace PPE3_CodeMatters_Github
             txtCP.Text = ((Visiteur)bsVisiteur.Current).cp;
             txtVille.Text = ((Visiteur)bsVisiteur.Current).ville;
             txtEmbauche.Text = ((Visiteur)bsVisiteur.Current).dateEmbauche;
+            bsTravailRegion.DataSource = ((Visiteur)bsVisiteur.Current).Region1.ToList(); // travail dans région
+            dgvResponsabilite.DataSource = bsTravailRegion;
 
-            dgvResponsabilite.Columns[0].HeaderText = "Région";
-            dgvResponsabilite.Columns[1].HeaderText = "Secteur";
+            bsResRegion.DataSource = ((Visiteur)bsVisiteur.Current).Region.ToList(); // responsable région
+            dgvResRegion.DataSource = bsResRegion;
 
-            dgvResponsabilite.Columns[0].DisplayIndex = 0;
+            for (int i=0; i<dgvResponsabilite.ColumnCount; i++)
+            {
+                dgvResponsabilite.Columns[i].Visible = false;
+            }
+
+            if(dgvResponsabilite.Rows.Count == 0)
+            {
+                dgvResponsabilite.Visible = false;
+                
+            }
+            else
+            {
+                lblTravail.Text = "Vous travaillez dans les régions suivantes : ";
+                dgvResponsabilite.Columns["idRegion"].Visible = true;
+                dgvResponsabilite.Columns["idRegion"].HeaderText = "Num Région";
+                dgvResponsabilite.Columns["idRegion"].DisplayIndex = 0;
+
+                dgvResponsabilite.Columns["libRegion"].Visible = true;
+                dgvResponsabilite.Columns["libRegion"].HeaderText = "Région";
+                dgvResponsabilite.Columns["libRegion"].DisplayIndex = 0;
+            }
+
+            for (int i = 0; i < dgvResRegion.ColumnCount; i++)
+            {
+                dgvResponsabilite.Columns[i].Visible = false;
+            }
+
+            if (dgvResRegion.Rows.Count > 0)
+            {
+                linklblResRegion.Text = "Vous êtes également responsable des régions suivantes : ";
+                linklblResRegion.Visible = true;
+            }
+            
+
+
+
+            
             
 
 
