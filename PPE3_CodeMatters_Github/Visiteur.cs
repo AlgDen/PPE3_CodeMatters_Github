@@ -17,11 +17,11 @@ namespace PPE3_CodeMatters_Github
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Visiteur()
         {
+            this.fichefrais = new HashSet<fichefrais>();
+            this.RAPPORT = new HashSet<RAPPORT>();
             this.Region = new HashSet<Region>();
             this.Secteur = new HashSet<Secteur>();
             this.Region1 = new HashSet<Region>();
-            this.fichefrais = new HashSet<fichefrais>();
-            this.RAPPORT = new HashSet<RAPPORT>();
         }
     
         public string idVisiteur { get; set; }
@@ -35,16 +35,16 @@ namespace PPE3_CodeMatters_Github
         public string identifiant { get; set; }
         public string password { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<fichefrais> fichefrais { get; set; }
         public virtual Laboratoire Laboratoire { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RAPPORT> RAPPORT { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Region> Region { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Secteur> Secteur { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Region> Region1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<fichefrais> fichefrais { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RAPPORT> RAPPORT { get; set; }
     }
 }

@@ -25,14 +25,11 @@ namespace PPE3_CodeMatters_Github
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Laboratoire> Laboratoire { get; set; }
-        public virtual DbSet<Region> Region { get; set; }
-        public virtual DbSet<Secteur> Secteur { get; set; }
-        public virtual DbSet<Visiteur> Visiteur { get; set; }
         public virtual DbSet<Etat> Etat { get; set; }
         public virtual DbSet<FAMILLE> FAMILLE { get; set; }
         public virtual DbSet<fichefrais> fichefrais { get; set; }
         public virtual DbSet<FraisForfait> FraisForfait { get; set; }
+        public virtual DbSet<Laboratoire> Laboratoire { get; set; }
         public virtual DbSet<LigneFraisForfait> LigneFraisForfait { get; set; }
         public virtual DbSet<LigneFraisHorsForfait> LigneFraisHorsForfait { get; set; }
         public virtual DbSet<MEDECIN> MEDECIN { get; set; }
@@ -40,6 +37,10 @@ namespace PPE3_CodeMatters_Github
         public virtual DbSet<MOTIF> MOTIF { get; set; }
         public virtual DbSet<OFFRIR> OFFRIR { get; set; }
         public virtual DbSet<RAPPORT> RAPPORT { get; set; }
+        public virtual DbSet<Region> Region { get; set; }
+        public virtual DbSet<Secteur> Secteur { get; set; }
         public virtual DbSet<SPECIALITE> SPECIALITE { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Visiteur> Visiteur { get; set; }
     }
 }

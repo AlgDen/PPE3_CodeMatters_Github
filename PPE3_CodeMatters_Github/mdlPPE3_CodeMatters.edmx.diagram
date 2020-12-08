@@ -4,40 +4,41 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4fa917ea7296408fa80828dac52fad29" Name="Diagram1" ZoomLevel="80">
-        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.Laboratoire" Width="1.5" PointX="0.75" PointY="2.875" />
-        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.Region" Width="3" PointX="8.75" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.Secteur" Width="1.5" PointX="5.25" PointY="2.625" />
-        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.Visiteur" Width="1.5" PointX="3" PointY="1.75" />
-        <AssociationConnector Association="mdlPPE3_CodeMatters.FK_Laboratoire" />
-        <AssociationConnector Association="mdlPPE3_CodeMatters.FK_SECTEUR" />
-        <AssociationConnector Association="mdlPPE3_CodeMatters.FK_VISITEUR" />
-        <AssociationConnector Association="mdlPPE3_CodeMatters.FK_VISITEURSECTEUR" />
-        <AssociationConnector Association="mdlPPE3_CodeMatters.Travailler" />
-        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.Etat" Width="1.5" PointX="3" PointY="19.375" />
-        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.FAMILLE" Width="1.5" PointX="3" PointY="16.5" />
-        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.fichefrais" Width="1.5" PointX="5.25" PointY="7.75" />
-        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.FraisForfait" Width="1.5" PointX="8.25" PointY="8.375" />
-        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.LigneFraisForfait" Width="1.5" PointX="10.5" PointY="8.125" />
-        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.LigneFraisHorsForfait" Width="1.5" PointX="7.5" PointY="11" />
-        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.MEDECIN" Width="1.5" PointX="3" PointY="10.125" />
-        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.MEDICAMENT" Width="1.5" PointX="5.25" PointY="16" />
-        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.MOTIF" Width="1.5" PointX="3" PointY="13.625" />
-        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.OFFRIR" Width="1.5" PointX="7.5" PointY="1.25" />
-        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.RAPPORT" Width="1.5" PointX="5.25" PointY="0.75" />
-        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.SPECIALITE" Width="1.5" PointX="0.75" PointY="10.75" />
+      <Diagram DiagramId="4fa917ea7296408fa80828dac52fad29" Name="Diagram1" ZoomLevel="81">
+        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.Etat" Width="1.5" PointX="3.625" PointY="4.25" />
+        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.FAMILLE" Width="1.5" PointX="6.625" PointY="22.25" />
+        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.fichefrais" Width="1.5" PointX="5.875" PointY="7.625" />
+        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.FraisForfait" Width="1.5" PointX="8.875" PointY="4" />
+        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.Laboratoire" Width="1.5" PointX="1.375" PointY="8.25" />
+        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.LigneFraisForfait" Width="1.5" PointX="11.125" PointY="8" />
+        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.LigneFraisHorsForfait" Width="1.5" PointX="8.125" PointY="15.75" />
+        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.MEDECIN" Width="1.5" PointX="6.625" PointY="0.5" />
+        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.MEDICAMENT" Width="1.5" PointX="8.875" PointY="21.75" />
+        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.MOTIF" Width="1.5" PointX="6.625" PointY="5" />
+        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.OFFRIR" Width="1.5" PointX="11.125" PointY="5" />
+        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.RAPPORT" Width="1.5" PointX="8.875" PointY="7.625" />
+        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.Region" Width="1.5" PointX="8.125" PointY="12.625" />
+        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.Secteur" Width="1.5" PointX="5.875" PointY="18.5" />
+        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.SPECIALITE" Width="1.5" PointX="4.375" PointY="1.125" />
+        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.sysdiagrams" Width="1.5" PointX="1.375" PointY="0.875" />
+        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.Visiteur" Width="1.5" PointX="3.625" PointY="7" />
         <AssociationConnector Association="mdlPPE3_CodeMatters.FK__fichefrai__idEta__2C3393D0" />
         <AssociationConnector Association="mdlPPE3_CodeMatters.medicament_fk" />
         <AssociationConnector Association="mdlPPE3_CodeMatters.FK__fichefrai__idVis__2D27B809" />
         <AssociationConnector Association="mdlPPE3_CodeMatters.FK__LigneFraisForfai__32E0915F" />
         <AssociationConnector Association="mdlPPE3_CodeMatters.FK__LigneFraisHorsFo__3B75D760" />
         <AssociationConnector Association="mdlPPE3_CodeMatters.FK__LigneFrai__idFra__33D4B598" />
+        <AssociationConnector Association="mdlPPE3_CodeMatters.FK_Laboratoire" />
         <AssociationConnector Association="mdlPPE3_CodeMatters.medecin_fk" />
         <AssociationConnector Association="mdlPPE3_CodeMatters.rapport_fk2" />
         <AssociationConnector Association="mdlPPE3_CodeMatters.offrir_fk2" />
         <AssociationConnector Association="mdlPPE3_CodeMatters.rapport_fk3" />
         <AssociationConnector Association="mdlPPE3_CodeMatters.offrir_fk1" />
         <AssociationConnector Association="mdlPPE3_CodeMatters.rapport_fk1" />
+        <AssociationConnector Association="mdlPPE3_CodeMatters.FK_SECTEUR" />
+        <AssociationConnector Association="mdlPPE3_CodeMatters.FK_VISITEUR" />
+        <AssociationConnector Association="mdlPPE3_CodeMatters.FK_VISITEURSECTEUR" />
+        <AssociationConnector Association="mdlPPE3_CodeMatters.Travailler" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

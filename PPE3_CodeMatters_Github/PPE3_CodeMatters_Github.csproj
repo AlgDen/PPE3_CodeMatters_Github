@@ -81,6 +81,12 @@
     <Compile Include="FMenu3.Designer.cs">
       <DependentUpon>FMenu3.cs</DependentUpon>
     </Compile>
+    <Compile Include="FModif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FModif.Designer.cs">
+      <DependentUpon>FModif.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormConnexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,13 +126,19 @@
     <Compile Include="MEDICAMENT.cs">
       <DependentUpon>mdlPPE3_CodeMatters.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modele.cs" />
     <Compile Include="MOTIF.cs">
       <DependentUpon>mdlPPE3_CodeMatters.tt</DependentUpon>
     </Compile>
     <Compile Include="OFFRIR.cs">
       <DependentUpon>mdlPPE3_CodeMatters.tt</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>mdlPPE3_CodeMatters.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X:\PP3\PP3 Mission3\Program.cs">
+      <Link>Program.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RAPPORT.cs">
       <DependentUpon>mdlPPE3_CodeMatters.tt</DependentUpon>
@@ -145,6 +157,9 @@
     </Compile>
     <EmbeddedResource Include="FMenu3.resx">
       <DependentUpon>FMenu3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FModif.resx">
+      <DependentUpon>FModif.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormConnexion.resx">
       <DependentUpon>FormConnexion.cs</DependentUpon>
@@ -167,6 +182,10 @@
       <DependentUpon>mdlPPE3_CodeMatters.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\fichefrais.datasource" />
+    <None Include="Properties\DataSources\FraisForfait.datasource" />
+    <None Include="Properties\DataSources\LigneFraisForfait.datasource" />
+    <None Include="Properties\DataSources\Visiteur.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

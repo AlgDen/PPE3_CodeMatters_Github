@@ -36,8 +36,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="char" MaxLength="3" Nullable="false" />
-          <Property Name="libelle" Type="char" MaxLength="20" />
+          <Property Name="libelle" Type="char" MaxLength="20" Nullable="false" />
           <Property Name="montant" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="deplacement" Type="bit" />
         </EntityType>
         <EntityType Name="Laboratoire">
           <Key>
@@ -141,6 +142,16 @@
           </Key>
           <Property Name="idSpecialite" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="libSpecialite" Type="varchar" MaxLength="64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Travailler">
           <Key>
@@ -401,6 +412,7 @@
           <EntitySet Name="Region" EntityType="Self.Region" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Secteur" EntityType="Self.Secteur" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SPECIALITE" EntityType="Self.SPECIALITE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Travailler" EntityType="Self.Travailler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Visiteur" EntityType="Self.Visiteur" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__fichefrai__idEta__2C3393D0" Association="Self.FK__fichefrai__idEta__2C3393D0">
@@ -481,34 +493,11 @@
     <edmx:ConceptualModels>
       <Schema Namespace="mdlPPE3_CodeMatters" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="CodeMattersDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Laboratoire" EntityType="mdlPPE3_CodeMatters.Laboratoire" />
-          <EntitySet Name="Region" EntityType="mdlPPE3_CodeMatters.Region" />
-          <EntitySet Name="Secteur" EntityType="mdlPPE3_CodeMatters.Secteur" />
-          <EntitySet Name="Visiteur" EntityType="mdlPPE3_CodeMatters.Visiteur" />
-          <AssociationSet Name="FK_Laboratoire" Association="mdlPPE3_CodeMatters.FK_Laboratoire">
-            <End Role="Laboratoire" EntitySet="Laboratoire" />
-            <End Role="Visiteur" EntitySet="Visiteur" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SECTEUR" Association="mdlPPE3_CodeMatters.FK_SECTEUR">
-            <End Role="Secteur" EntitySet="Secteur" />
-            <End Role="Region" EntitySet="Region" />
-          </AssociationSet>
-          <AssociationSet Name="FK_VISITEUR" Association="mdlPPE3_CodeMatters.FK_VISITEUR">
-            <End Role="Visiteur" EntitySet="Visiteur" />
-            <End Role="Region" EntitySet="Region" />
-          </AssociationSet>
-          <AssociationSet Name="FK_VISITEURSECTEUR" Association="mdlPPE3_CodeMatters.FK_VISITEURSECTEUR">
-            <End Role="Visiteur" EntitySet="Visiteur" />
-            <End Role="Secteur" EntitySet="Secteur" />
-          </AssociationSet>
-          <AssociationSet Name="Travailler" Association="mdlPPE3_CodeMatters.Travailler">
-            <End Role="Region" EntitySet="Region" />
-            <End Role="Visiteur" EntitySet="Visiteur" />
-          </AssociationSet>
           <EntitySet Name="Etat" EntityType="mdlPPE3_CodeMatters.Etat" />
           <EntitySet Name="FAMILLE" EntityType="mdlPPE3_CodeMatters.FAMILLE" />
           <EntitySet Name="fichefrais" EntityType="mdlPPE3_CodeMatters.fichefrais" />
           <EntitySet Name="FraisForfait" EntityType="mdlPPE3_CodeMatters.FraisForfait" />
+          <EntitySet Name="Laboratoire" EntityType="mdlPPE3_CodeMatters.Laboratoire" />
           <EntitySet Name="LigneFraisForfait" EntityType="mdlPPE3_CodeMatters.LigneFraisForfait" />
           <EntitySet Name="LigneFraisHorsForfait" EntityType="mdlPPE3_CodeMatters.LigneFraisHorsForfait" />
           <EntitySet Name="MEDECIN" EntityType="mdlPPE3_CodeMatters.MEDECIN" />
@@ -516,7 +505,11 @@
           <EntitySet Name="MOTIF" EntityType="mdlPPE3_CodeMatters.MOTIF" />
           <EntitySet Name="OFFRIR" EntityType="mdlPPE3_CodeMatters.OFFRIR" />
           <EntitySet Name="RAPPORT" EntityType="mdlPPE3_CodeMatters.RAPPORT" />
+          <EntitySet Name="Region" EntityType="mdlPPE3_CodeMatters.Region" />
+          <EntitySet Name="Secteur" EntityType="mdlPPE3_CodeMatters.Secteur" />
           <EntitySet Name="SPECIALITE" EntityType="mdlPPE3_CodeMatters.SPECIALITE" />
+          <EntitySet Name="sysdiagrams" EntityType="mdlPPE3_CodeMatters.sysdiagrams" />
+          <EntitySet Name="Visiteur" EntityType="mdlPPE3_CodeMatters.Visiteur" />
           <AssociationSet Name="FK__fichefrai__idEta__2C3393D0" Association="mdlPPE3_CodeMatters.FK__fichefrai__idEta__2C3393D0">
             <End Role="Etat" EntitySet="Etat" />
             <End Role="fichefrais" EntitySet="fichefrais" />
@@ -540,6 +533,10 @@
           <AssociationSet Name="FK__LigneFrai__idFra__33D4B598" Association="mdlPPE3_CodeMatters.FK__LigneFrai__idFra__33D4B598">
             <End Role="FraisForfait" EntitySet="FraisForfait" />
             <End Role="LigneFraisForfait" EntitySet="LigneFraisForfait" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Laboratoire" Association="mdlPPE3_CodeMatters.FK_Laboratoire">
+            <End Role="Laboratoire" EntitySet="Laboratoire" />
+            <End Role="Visiteur" EntitySet="Visiteur" />
           </AssociationSet>
           <AssociationSet Name="medecin_fk" Association="mdlPPE3_CodeMatters.medecin_fk">
             <End Role="SPECIALITE" EntitySet="SPECIALITE" />
@@ -565,110 +562,23 @@
             <End Role="Visiteur" EntitySet="Visiteur" />
             <End Role="RAPPORT" EntitySet="RAPPORT" />
           </AssociationSet>
+          <AssociationSet Name="FK_SECTEUR" Association="mdlPPE3_CodeMatters.FK_SECTEUR">
+            <End Role="Secteur" EntitySet="Secteur" />
+            <End Role="Region" EntitySet="Region" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VISITEUR" Association="mdlPPE3_CodeMatters.FK_VISITEUR">
+            <End Role="Visiteur" EntitySet="Visiteur" />
+            <End Role="Region" EntitySet="Region" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VISITEURSECTEUR" Association="mdlPPE3_CodeMatters.FK_VISITEURSECTEUR">
+            <End Role="Visiteur" EntitySet="Visiteur" />
+            <End Role="Secteur" EntitySet="Secteur" />
+          </AssociationSet>
+          <AssociationSet Name="Travailler" Association="mdlPPE3_CodeMatters.Travailler">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="Visiteur" EntitySet="Visiteur" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Laboratoire">
-          <Key>
-            <PropertyRef Name="idLabo" />
-          </Key>
-          <Property Name="idLabo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nomLabo" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="Visiteur" Relationship="mdlPPE3_CodeMatters.FK_Laboratoire" FromRole="Laboratoire" ToRole="Visiteur" />
-        </EntityType>
-        <EntityType Name="Region">
-          <Key>
-            <PropertyRef Name="idRegion" />
-          </Key>
-          <Property Name="idRegion" Type="Int32" Nullable="false" />
-          <Property Name="libRegion" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Name="idVisiteur" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
-          <Property Name="idSecteur" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Secteur" Relationship="mdlPPE3_CodeMatters.FK_SECTEUR" FromRole="Region" ToRole="Secteur" />
-          <NavigationProperty Name="Visiteur" Relationship="mdlPPE3_CodeMatters.FK_VISITEUR" FromRole="Region" ToRole="Visiteur" />
-          <NavigationProperty Name="Visiteur1" Relationship="mdlPPE3_CodeMatters.Travailler" FromRole="Region" ToRole="Visiteur" />
-        </EntityType>
-        <EntityType Name="Secteur">
-          <Key>
-            <PropertyRef Name="idSecteur" />
-          </Key>
-          <Property Name="idSecteur" Type="Int32" Nullable="false" />
-          <Property Name="libSecteur" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Name="idVisiteur" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="Region" Relationship="mdlPPE3_CodeMatters.FK_SECTEUR" FromRole="Secteur" ToRole="Region" />
-          <NavigationProperty Name="Visiteur" Relationship="mdlPPE3_CodeMatters.FK_VISITEURSECTEUR" FromRole="Secteur" ToRole="Visiteur" />
-        </EntityType>
-        <EntityType Name="Visiteur">
-          <Key>
-            <PropertyRef Name="idVisiteur" />
-          </Key>
-          <Property Name="idVisiteur" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
-          <Property Name="idLabo" Type="Int32" Nullable="false" />
-          <Property Name="nom" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
-          <Property Name="prenom" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
-          <Property Name="rue" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Name="cp" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
-          <Property Name="ville" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
-          <Property Name="dateEmbauche" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="identifiant" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
-          <Property Name="password" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Laboratoire" Relationship="mdlPPE3_CodeMatters.FK_Laboratoire" FromRole="Visiteur" ToRole="Laboratoire" />
-          <NavigationProperty Name="Region" Relationship="mdlPPE3_CodeMatters.FK_VISITEUR" FromRole="Visiteur" ToRole="Region" />
-          <NavigationProperty Name="Secteur" Relationship="mdlPPE3_CodeMatters.FK_VISITEURSECTEUR" FromRole="Visiteur" ToRole="Secteur" />
-          <NavigationProperty Name="Region1" Relationship="mdlPPE3_CodeMatters.Travailler" FromRole="Visiteur" ToRole="Region" />
-          <NavigationProperty Name="fichefrais" Relationship="mdlPPE3_CodeMatters.FK__fichefrai__idVis__2D27B809" FromRole="Visiteur" ToRole="fichefrais" />
-          <NavigationProperty Name="RAPPORT" Relationship="mdlPPE3_CodeMatters.rapport_fk1" FromRole="Visiteur" ToRole="RAPPORT" />
-        </EntityType>
-        <Association Name="FK_Laboratoire">
-          <End Type="mdlPPE3_CodeMatters.Laboratoire" Role="Laboratoire" Multiplicity="1" />
-          <End Type="mdlPPE3_CodeMatters.Visiteur" Role="Visiteur" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Laboratoire">
-              <PropertyRef Name="idLabo" />
-            </Principal>
-            <Dependent Role="Visiteur">
-              <PropertyRef Name="idLabo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_SECTEUR">
-          <End Type="mdlPPE3_CodeMatters.Secteur" Role="Secteur" Multiplicity="1" />
-          <End Type="mdlPPE3_CodeMatters.Region" Role="Region" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Secteur">
-              <PropertyRef Name="idSecteur" />
-            </Principal>
-            <Dependent Role="Region">
-              <PropertyRef Name="idSecteur" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_VISITEUR">
-          <End Type="mdlPPE3_CodeMatters.Visiteur" Role="Visiteur" Multiplicity="1" />
-          <End Type="mdlPPE3_CodeMatters.Region" Role="Region" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Visiteur">
-              <PropertyRef Name="idVisiteur" />
-            </Principal>
-            <Dependent Role="Region">
-              <PropertyRef Name="idVisiteur" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_VISITEURSECTEUR">
-          <End Type="mdlPPE3_CodeMatters.Visiteur" Role="Visiteur" Multiplicity="1" />
-          <End Type="mdlPPE3_CodeMatters.Secteur" Role="Secteur" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Visiteur">
-              <PropertyRef Name="idVisiteur" />
-            </Principal>
-            <Dependent Role="Secteur">
-              <PropertyRef Name="idVisiteur" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="Travailler">
-          <End Type="mdlPPE3_CodeMatters.Region" Role="Region" Multiplicity="*" />
-          <End Type="mdlPPE3_CodeMatters.Visiteur" Role="Visiteur" Multiplicity="*" />
-        </Association>
         <EntityType Name="Etat">
           <Key>
             <PropertyRef Name="id" />
@@ -706,9 +616,18 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
-          <Property Name="libelle" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="libelle" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
           <Property Name="montant" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="deplacement" Type="Boolean" />
           <NavigationProperty Name="LigneFraisForfait" Relationship="mdlPPE3_CodeMatters.FK__LigneFrai__idFra__33D4B598" FromRole="FraisForfait" ToRole="LigneFraisForfait" />
+        </EntityType>
+        <EntityType Name="Laboratoire">
+          <Key>
+            <PropertyRef Name="idLabo" />
+          </Key>
+          <Property Name="idLabo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomLabo" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Visiteur" Relationship="mdlPPE3_CodeMatters.FK_Laboratoire" FromRole="Laboratoire" ToRole="Visiteur" />
         </EntityType>
         <EntityType Name="LigneFraisForfait">
           <Key>
@@ -796,6 +715,28 @@
           <NavigationProperty Name="OFFRIR" Relationship="mdlPPE3_CodeMatters.offrir_fk1" FromRole="RAPPORT" ToRole="OFFRIR" />
           <NavigationProperty Name="Visiteur" Relationship="mdlPPE3_CodeMatters.rapport_fk1" FromRole="RAPPORT" ToRole="Visiteur" />
         </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="idRegion" />
+          </Key>
+          <Property Name="idRegion" Type="Int32" Nullable="false" />
+          <Property Name="libRegion" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="idVisiteur" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="idSecteur" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Secteur" Relationship="mdlPPE3_CodeMatters.FK_SECTEUR" FromRole="Region" ToRole="Secteur" />
+          <NavigationProperty Name="Visiteur" Relationship="mdlPPE3_CodeMatters.FK_VISITEUR" FromRole="Region" ToRole="Visiteur" />
+          <NavigationProperty Name="Visiteur1" Relationship="mdlPPE3_CodeMatters.Travailler" FromRole="Region" ToRole="Visiteur" />
+        </EntityType>
+        <EntityType Name="Secteur">
+          <Key>
+            <PropertyRef Name="idSecteur" />
+          </Key>
+          <Property Name="idSecteur" Type="Int32" Nullable="false" />
+          <Property Name="libSecteur" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="idVisiteur" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Region" Relationship="mdlPPE3_CodeMatters.FK_SECTEUR" FromRole="Secteur" ToRole="Region" />
+          <NavigationProperty Name="Visiteur" Relationship="mdlPPE3_CodeMatters.FK_VISITEURSECTEUR" FromRole="Secteur" ToRole="Visiteur" />
+        </EntityType>
         <EntityType Name="SPECIALITE">
           <Key>
             <PropertyRef Name="idSpecialite" />
@@ -803,6 +744,37 @@
           <Property Name="idSpecialite" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
           <Property Name="libSpecialite" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="MEDECIN" Relationship="mdlPPE3_CodeMatters.medecin_fk" FromRole="SPECIALITE" ToRole="MEDECIN" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Visiteur">
+          <Key>
+            <PropertyRef Name="idVisiteur" />
+          </Key>
+          <Property Name="idVisiteur" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="idLabo" Type="Int32" Nullable="false" />
+          <Property Name="nom" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="prenom" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="rue" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="cp" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="ville" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="dateEmbauche" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="identifiant" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="fichefrais" Relationship="mdlPPE3_CodeMatters.FK__fichefrai__idVis__2D27B809" FromRole="Visiteur" ToRole="fichefrais" />
+          <NavigationProperty Name="Laboratoire" Relationship="mdlPPE3_CodeMatters.FK_Laboratoire" FromRole="Visiteur" ToRole="Laboratoire" />
+          <NavigationProperty Name="RAPPORT" Relationship="mdlPPE3_CodeMatters.rapport_fk1" FromRole="Visiteur" ToRole="RAPPORT" />
+          <NavigationProperty Name="Region" Relationship="mdlPPE3_CodeMatters.FK_VISITEUR" FromRole="Visiteur" ToRole="Region" />
+          <NavigationProperty Name="Secteur" Relationship="mdlPPE3_CodeMatters.FK_VISITEURSECTEUR" FromRole="Visiteur" ToRole="Secteur" />
+          <NavigationProperty Name="Region1" Relationship="mdlPPE3_CodeMatters.Travailler" FromRole="Visiteur" ToRole="Region" />
         </EntityType>
         <Association Name="FK__fichefrai__idEta__2C3393D0">
           <End Type="mdlPPE3_CodeMatters.Etat" Role="Etat" Multiplicity="0..1" />
@@ -880,6 +852,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Laboratoire">
+          <End Type="mdlPPE3_CodeMatters.Laboratoire" Role="Laboratoire" Multiplicity="1" />
+          <End Type="mdlPPE3_CodeMatters.Visiteur" Role="Visiteur" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Laboratoire">
+              <PropertyRef Name="idLabo" />
+            </Principal>
+            <Dependent Role="Visiteur">
+              <PropertyRef Name="idLabo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="medecin_fk">
           <End Type="mdlPPE3_CodeMatters.SPECIALITE" Role="SPECIALITE" Multiplicity="0..1" />
           <End Type="mdlPPE3_CodeMatters.MEDECIN" Role="MEDECIN" Multiplicity="*" />
@@ -952,63 +936,52 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <Association Name="FK_SECTEUR">
+          <End Type="mdlPPE3_CodeMatters.Secteur" Role="Secteur" Multiplicity="1" />
+          <End Type="mdlPPE3_CodeMatters.Region" Role="Region" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Secteur">
+              <PropertyRef Name="idSecteur" />
+            </Principal>
+            <Dependent Role="Region">
+              <PropertyRef Name="idSecteur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VISITEUR">
+          <End Type="mdlPPE3_CodeMatters.Visiteur" Role="Visiteur" Multiplicity="1" />
+          <End Type="mdlPPE3_CodeMatters.Region" Role="Region" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visiteur">
+              <PropertyRef Name="idVisiteur" />
+            </Principal>
+            <Dependent Role="Region">
+              <PropertyRef Name="idVisiteur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VISITEURSECTEUR">
+          <End Type="mdlPPE3_CodeMatters.Visiteur" Role="Visiteur" Multiplicity="1" />
+          <End Type="mdlPPE3_CodeMatters.Secteur" Role="Secteur" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Visiteur">
+              <PropertyRef Name="idVisiteur" />
+            </Principal>
+            <Dependent Role="Secteur">
+              <PropertyRef Name="idVisiteur" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Travailler">
+          <End Type="mdlPPE3_CodeMatters.Region" Role="Region" Multiplicity="*" />
+          <End Type="mdlPPE3_CodeMatters.Visiteur" Role="Visiteur" Multiplicity="*" />
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="mdlPPE3_CodeMattersStoreContainer" CdmEntityContainer="CodeMattersDBEntities">
-          <EntitySetMapping Name="Laboratoire">
-            <EntityTypeMapping TypeName="mdlPPE3_CodeMatters.Laboratoire">
-              <MappingFragment StoreEntitySet="Laboratoire">
-                <ScalarProperty Name="nomLabo" ColumnName="nomLabo" />
-                <ScalarProperty Name="idLabo" ColumnName="idLabo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Region">
-            <EntityTypeMapping TypeName="mdlPPE3_CodeMatters.Region">
-              <MappingFragment StoreEntitySet="Region">
-                <ScalarProperty Name="idSecteur" ColumnName="idSecteur" />
-                <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
-                <ScalarProperty Name="libRegion" ColumnName="libRegion" />
-                <ScalarProperty Name="idRegion" ColumnName="idRegion" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Secteur">
-            <EntityTypeMapping TypeName="mdlPPE3_CodeMatters.Secteur">
-              <MappingFragment StoreEntitySet="Secteur">
-                <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
-                <ScalarProperty Name="libSecteur" ColumnName="libSecteur" />
-                <ScalarProperty Name="idSecteur" ColumnName="idSecteur" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Visiteur">
-            <EntityTypeMapping TypeName="mdlPPE3_CodeMatters.Visiteur">
-              <MappingFragment StoreEntitySet="Visiteur">
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="identifiant" ColumnName="identifiant" />
-                <ScalarProperty Name="dateEmbauche" ColumnName="dateEmbauche" />
-                <ScalarProperty Name="ville" ColumnName="ville" />
-                <ScalarProperty Name="cp" ColumnName="cp" />
-                <ScalarProperty Name="rue" ColumnName="rue" />
-                <ScalarProperty Name="prenom" ColumnName="prenom" />
-                <ScalarProperty Name="nom" ColumnName="nom" />
-                <ScalarProperty Name="idLabo" ColumnName="idLabo" />
-                <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <AssociationSetMapping Name="Travailler" TypeName="mdlPPE3_CodeMatters.Travailler" StoreEntitySet="Travailler">
-            <EndProperty Name="Visiteur">
-              <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
-            </EndProperty>
-            <EndProperty Name="Region">
-              <ScalarProperty Name="idRegion" ColumnName="idRegion" />
-            </EndProperty>
-          </AssociationSetMapping>
           <EntitySetMapping Name="Etat">
             <EntityTypeMapping TypeName="mdlPPE3_CodeMatters.Etat">
               <MappingFragment StoreEntitySet="Etat">
@@ -1040,9 +1013,18 @@
           <EntitySetMapping Name="FraisForfait">
             <EntityTypeMapping TypeName="mdlPPE3_CodeMatters.FraisForfait">
               <MappingFragment StoreEntitySet="FraisForfait">
+                <ScalarProperty Name="deplacement" ColumnName="deplacement" />
                 <ScalarProperty Name="montant" ColumnName="montant" />
                 <ScalarProperty Name="libelle" ColumnName="libelle" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Laboratoire">
+            <EntityTypeMapping TypeName="mdlPPE3_CodeMatters.Laboratoire">
+              <MappingFragment StoreEntitySet="Laboratoire">
+                <ScalarProperty Name="nomLabo" ColumnName="nomLabo" />
+                <ScalarProperty Name="idLabo" ColumnName="idLabo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1122,6 +1104,25 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Region">
+            <EntityTypeMapping TypeName="mdlPPE3_CodeMatters.Region">
+              <MappingFragment StoreEntitySet="Region">
+                <ScalarProperty Name="idSecteur" ColumnName="idSecteur" />
+                <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
+                <ScalarProperty Name="libRegion" ColumnName="libRegion" />
+                <ScalarProperty Name="idRegion" ColumnName="idRegion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Secteur">
+            <EntityTypeMapping TypeName="mdlPPE3_CodeMatters.Secteur">
+              <MappingFragment StoreEntitySet="Secteur">
+                <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
+                <ScalarProperty Name="libSecteur" ColumnName="libSecteur" />
+                <ScalarProperty Name="idSecteur" ColumnName="idSecteur" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="SPECIALITE">
             <EntityTypeMapping TypeName="mdlPPE3_CodeMatters.SPECIALITE">
               <MappingFragment StoreEntitySet="SPECIALITE">
@@ -1130,6 +1131,41 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="mdlPPE3_CodeMatters.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Visiteur">
+            <EntityTypeMapping TypeName="mdlPPE3_CodeMatters.Visiteur">
+              <MappingFragment StoreEntitySet="Visiteur">
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="identifiant" ColumnName="identifiant" />
+                <ScalarProperty Name="dateEmbauche" ColumnName="dateEmbauche" />
+                <ScalarProperty Name="ville" ColumnName="ville" />
+                <ScalarProperty Name="cp" ColumnName="cp" />
+                <ScalarProperty Name="rue" ColumnName="rue" />
+                <ScalarProperty Name="prenom" ColumnName="prenom" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="idLabo" ColumnName="idLabo" />
+                <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Travailler" TypeName="mdlPPE3_CodeMatters.Travailler" StoreEntitySet="Travailler">
+            <EndProperty Name="Visiteur">
+              <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
+            </EndProperty>
+            <EndProperty Name="Region">
+              <ScalarProperty Name="idRegion" ColumnName="idRegion" />
+            </EndProperty>
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
