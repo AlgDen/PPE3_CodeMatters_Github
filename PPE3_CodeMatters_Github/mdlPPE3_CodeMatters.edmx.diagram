@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="4fa917ea7296408fa80828dac52fad29" Name="Diagram1" ZoomLevel="82">
         <EntityTypeShape EntityType="mdlPPE3_CodeMatters.Laboratoire" Width="1.5" PointX="0.75" PointY="2.875" />
-        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.Region" Width="3" PointX="8.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="mdlPPE3_CodeMatters.Region" Width="3" PointX="9.25" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="mdlPPE3_CodeMatters.Secteur" Width="1.5" PointX="5.25" PointY="2.625" />
         <EntityTypeShape EntityType="mdlPPE3_CodeMatters.Visiteur" Width="1.5" PointX="3" PointY="1.75" />
         <AssociationConnector Association="mdlPPE3_CodeMatters.FK_Laboratoire" />

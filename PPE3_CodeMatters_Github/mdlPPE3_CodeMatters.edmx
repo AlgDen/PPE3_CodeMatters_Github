@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="mdlPPE3_CodeMatters.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="mdlPPE3_CodeMatters.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Etat">
           <Key>
             <PropertyRef Name="id" />
@@ -36,8 +36,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="char" MaxLength="3" Nullable="false" />
-          <Property Name="libelle" Type="char" MaxLength="20" />
+          <Property Name="libelle" Type="char" MaxLength="20" Nullable="false" />
           <Property Name="montant" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="deplacement" Type="bit" />
         </EntityType>
         <EntityType Name="Laboratoire">
           <Key>
@@ -165,7 +166,7 @@
           <Property Name="identifiant" Type="varchar" MaxLength="16" Nullable="false" />
           <Property Name="password" Type="varchar" MaxLength="128" Nullable="false" />
         </EntityType>
-        <Association Name="FK__fichefrai__idEta__3E52440B">
+        <Association Name="FK__fichefrai__idEta__2C3393D0">
           <End Role="Etat" Type="Self.Etat" Multiplicity="0..1" />
           <End Role="fichefrais" Type="Self.fichefrais" Multiplicity="*" />
           <ReferentialConstraint>
@@ -177,7 +178,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__fichefrai__idVis__3F466844">
+        <Association Name="FK__fichefrai__idVis__2D27B809">
           <End Role="Visiteur" Type="Self.Visiteur" Multiplicity="1" />
           <End Role="fichefrais" Type="Self.fichefrais" Multiplicity="*" />
           <ReferentialConstraint>
@@ -189,7 +190,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__LigneFrai__idFra__440B1D61">
+        <Association Name="FK__LigneFrai__idFra__33D4B598">
           <End Role="FraisForfait" Type="Self.FraisForfait" Multiplicity="1" />
           <End Role="LigneFraisForfait" Type="Self.LigneFraisForfait" Multiplicity="*" />
           <ReferentialConstraint>
@@ -201,7 +202,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__LigneFraisForfai__4316F928">
+        <Association Name="FK__LigneFraisForfai__32E0915F">
           <End Role="fichefrais" Type="Self.fichefrais" Multiplicity="1" />
           <End Role="LigneFraisForfait" Type="Self.LigneFraisForfait" Multiplicity="*" />
           <ReferentialConstraint>
@@ -215,7 +216,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__LigneFraisHorsFo__49C3F6B7">
+        <Association Name="FK__LigneFraisHorsFo__3B75D760">
           <End Role="fichefrais" Type="Self.fichefrais" Multiplicity="1" />
           <End Role="LigneFraisHorsForfait" Type="Self.LigneFraisHorsForfait" Multiplicity="*" />
           <ReferentialConstraint>
@@ -403,23 +404,23 @@
           <EntitySet Name="SPECIALITE" EntityType="Self.SPECIALITE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Travailler" EntityType="Self.Travailler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Visiteur" EntityType="Self.Visiteur" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__fichefrai__idEta__3E52440B" Association="Self.FK__fichefrai__idEta__3E52440B">
+          <AssociationSet Name="FK__fichefrai__idEta__2C3393D0" Association="Self.FK__fichefrai__idEta__2C3393D0">
             <End Role="Etat" EntitySet="Etat" />
             <End Role="fichefrais" EntitySet="fichefrais" />
           </AssociationSet>
-          <AssociationSet Name="FK__fichefrai__idVis__3F466844" Association="Self.FK__fichefrai__idVis__3F466844">
+          <AssociationSet Name="FK__fichefrai__idVis__2D27B809" Association="Self.FK__fichefrai__idVis__2D27B809">
             <End Role="Visiteur" EntitySet="Visiteur" />
             <End Role="fichefrais" EntitySet="fichefrais" />
           </AssociationSet>
-          <AssociationSet Name="FK__LigneFrai__idFra__440B1D61" Association="Self.FK__LigneFrai__idFra__440B1D61">
+          <AssociationSet Name="FK__LigneFrai__idFra__33D4B598" Association="Self.FK__LigneFrai__idFra__33D4B598">
             <End Role="FraisForfait" EntitySet="FraisForfait" />
             <End Role="LigneFraisForfait" EntitySet="LigneFraisForfait" />
           </AssociationSet>
-          <AssociationSet Name="FK__LigneFraisForfai__4316F928" Association="Self.FK__LigneFraisForfai__4316F928">
+          <AssociationSet Name="FK__LigneFraisForfai__32E0915F" Association="Self.FK__LigneFraisForfai__32E0915F">
             <End Role="fichefrais" EntitySet="fichefrais" />
             <End Role="LigneFraisForfait" EntitySet="LigneFraisForfait" />
           </AssociationSet>
-          <AssociationSet Name="FK__LigneFraisHorsFo__49C3F6B7" Association="Self.FK__LigneFraisHorsFo__49C3F6B7">
+          <AssociationSet Name="FK__LigneFraisHorsFo__3B75D760" Association="Self.FK__LigneFraisHorsFo__3B75D760">
             <End Role="fichefrais" EntitySet="fichefrais" />
             <End Role="LigneFraisHorsForfait" EntitySet="LigneFraisHorsForfait" />
           </AssociationSet>
@@ -706,9 +707,10 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
-          <Property Name="libelle" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="libelle" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="montant" Type="Decimal" Precision="5" Scale="2" />
           <NavigationProperty Name="LigneFraisForfait" Relationship="mdlPPE3_CodeMatters.FK__LigneFrai__idFra__33D4B598" FromRole="FraisForfait" ToRole="LigneFraisForfait" />
+          <Property Name="deplacement" Type="Boolean" />
         </EntityType>
         <EntityType Name="LigneFraisForfait">
           <Key>
@@ -1040,6 +1042,7 @@
           <EntitySetMapping Name="FraisForfait">
             <EntityTypeMapping TypeName="mdlPPE3_CodeMatters.FraisForfait">
               <MappingFragment StoreEntitySet="FraisForfait">
+                <ScalarProperty Name="deplacement" ColumnName="deplacement" />
                 <ScalarProperty Name="montant" ColumnName="montant" />
                 <ScalarProperty Name="libelle" ColumnName="libelle" />
                 <ScalarProperty Name="id" ColumnName="id" />

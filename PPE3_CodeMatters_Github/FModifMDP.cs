@@ -26,7 +26,7 @@ namespace PPE3_CodeMatters_Github
         {
             if(txtNewMDP.Text == txtVerifMDP.Text)
             {
-                if (Modele.ModifMDP(txtNewMDP.Text))
+                if (Modele.ModifMDP(txtNewMDP.Text) && txtNewMDP.Text.Length > 4)
                 {
                     MessageBox.Show("Le mot de passe a été modifié.", "Succès", MessageBoxButtons.OK);
                     this.Close();

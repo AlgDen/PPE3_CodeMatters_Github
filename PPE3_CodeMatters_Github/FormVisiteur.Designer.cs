@@ -63,9 +63,6 @@
             // 
             // lblInfos
             // 
-            this.lblInfos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblInfos.AutoSize = true;
             this.lblInfos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfos.Location = new System.Drawing.Point(159, 20);
@@ -234,11 +231,15 @@
             // 
             // dgvResponsabilite
             // 
+            this.dgvResponsabilite.AllowUserToAddRows = false;
+            this.dgvResponsabilite.AllowUserToDeleteRows = false;
             this.dgvResponsabilite.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResponsabilite.Location = new System.Drawing.Point(50, 68);
             this.dgvResponsabilite.Name = "dgvResponsabilite";
-            this.dgvResponsabilite.Size = new System.Drawing.Size(378, 150);
+            this.dgvResponsabilite.ReadOnly = true;
+            this.dgvResponsabilite.Size = new System.Drawing.Size(80, 22);
             this.dgvResponsabilite.TabIndex = 19;
+            this.dgvResponsabilite.Visible = false;
             // 
             // lblTravail
             // 
@@ -248,6 +249,7 @@
             this.lblTravail.Size = new System.Drawing.Size(35, 13);
             this.lblTravail.TabIndex = 20;
             this.lblTravail.Text = "label1";
+            this.lblTravail.Visible = false;
             // 
             // linklblResRegion
             // 
@@ -262,10 +264,13 @@
             // 
             // dgvResRegion
             // 
+            this.dgvResRegion.AllowUserToAddRows = false;
+            this.dgvResRegion.AllowUserToDeleteRows = false;
             this.dgvResRegion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResRegion.Location = new System.Drawing.Point(131, 221);
+            this.dgvResRegion.Location = new System.Drawing.Point(141, 68);
             this.dgvResRegion.Name = "dgvResRegion";
-            this.dgvResRegion.Size = new System.Drawing.Size(117, 13);
+            this.dgvResRegion.ReadOnly = true;
+            this.dgvResRegion.Size = new System.Drawing.Size(80, 22);
             this.dgvResRegion.TabIndex = 22;
             this.dgvResRegion.Visible = false;
             // 

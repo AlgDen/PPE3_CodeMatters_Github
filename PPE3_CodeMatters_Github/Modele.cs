@@ -91,17 +91,6 @@ namespace PPE3_CodeMatters_Github
         }
 
 
-        public static Region responsableRegion(string id)
-        {
-            Region vretour = null;
-
-            var query = listeRegion()
-                .Where(x => x.idVisiteur == id)
-                .Select(x => new { x.libRegion})
-
-
-        }
-
         public static bool validConnexion()
         {
             return connexionValide;
@@ -134,7 +123,6 @@ namespace PPE3_CodeMatters_Github
         {
             return maConnexion.Region.ToList();
         }
-
 
 
     }

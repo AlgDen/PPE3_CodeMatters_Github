@@ -30,56 +30,58 @@ namespace PPE3_CodeMatters_Github
 
         private void BsVisiteur_CurrentChanged(object sender, EventArgs e)
         {
+            
             txtNom.Text = ((Visiteur)bsVisiteur.Current).nom;
             txtPrenom.Text = ((Visiteur)bsVisiteur.Current).prenom;
             txtRue.Text = ((Visiteur)bsVisiteur.Current).rue;
             txtCP.Text = ((Visiteur)bsVisiteur.Current).cp;
             txtVille.Text = ((Visiteur)bsVisiteur.Current).ville;
             txtEmbauche.Text = ((Visiteur)bsVisiteur.Current).dateEmbauche;
-            bsTravailRegion.DataSource = ((Visiteur)bsVisiteur.Current).Region1.ToList(); // travail dans région
+            bsTravailRegion.DataSource = ((Visiteur)bsVisiteur.Current).Region1.ToList(); // travaille dans région
             dgvResponsabilite.DataSource = bsTravailRegion;
 
-            bsResRegion.DataSource = ((Visiteur)bsVisiteur.Current).Region.ToList(); // responsable région
+            bsResRegion.DataSource = ((Visiteur)bsVisiteur.Current).Region.ToList(); // travaille dans région
             dgvResRegion.DataSource = bsResRegion;
 
-            for (int i=0; i<dgvResponsabilite.ColumnCount; i++)
-            {
-                dgvResponsabilite.Columns[i].Visible = false;
-            }
 
-            if(dgvResponsabilite.Rows.Count == 0)
+            // Si le binding source TravailRegion n'est pas empty
+            if (bsTravailRegion.Count > 0 && bsResRegion.Count == 0)
             {
-                dgvResponsabilite.Visible = false;
-                
-            }
-            else
-            {
-                lblTravail.Text = "Vous travaillez dans les régions suivantes : ";
+                lblTravail.Text = "Vous travaillez dans la/les régions suivantes :";
+
+                for (int i = 0; i < dgvResponsabilite.ColumnCount; i++)
+                {
+                    dgvResponsabilite.Columns[i].Visible = false;
+                }
+
+                dgvResponsabilite.Visible = true;
+                lblTravail.Visible = true;
+
+                // Resize dgvResponsabilité
+                dgvResponsabilite.Top = 68;
+                dgvResponsabilite.Left = 50;
+                dgvResponsabilite.Size = new Size(380, 150);
+
+                // Afficher les deux colonnes utiles
                 dgvResponsabilite.Columns["idRegion"].Visible = true;
                 dgvResponsabilite.Columns["idRegion"].HeaderText = "Num Région";
                 dgvResponsabilite.Columns["idRegion"].DisplayIndex = 0;
 
                 dgvResponsabilite.Columns["libRegion"].Visible = true;
                 dgvResponsabilite.Columns["libRegion"].HeaderText = "Région";
-                dgvResponsabilite.Columns["libRegion"].DisplayIndex = 0;
+                dgvResponsabilite.Columns["libRegion"].DisplayIndex = 1;
             }
-
-            for (int i = 0; i < dgvResRegion.ColumnCount; i++)
+            
+            else if (bsResRegion.Count > 0)
             {
-                dgvResponsabilite.Columns[i].Visible = false;
+                lblTravail.Text = "Vous êtes responsable de la/les régions suivantes :";
+                dgvResponsabilite.Visible = false;
+                lblTravail.Visible = true;
+
+
             }
 
-            if (dgvResRegion.Rows.Count > 0)
-            {
-                linklblResRegion.Text = "Vous êtes également responsable des régions suivantes : ";
-                linklblResRegion.Visible = true;
-            }
-            
 
-
-
-            
-            
 
 
         }
