@@ -43,6 +43,7 @@
             this.txtIdentifiant.Name = "txtIdentifiant";
             this.txtIdentifiant.Size = new System.Drawing.Size(162, 20);
             this.txtIdentifiant.TabIndex = 7;
+            this.txtIdentifiant.Text = "deni";
             this.txtIdentifiant.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtIdentifiant_KeyDown);
             // 
             // txtpassword
@@ -52,6 +53,7 @@
             this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(162, 20);
             this.txtpassword.TabIndex = 8;
+            this.txtpassword.Text = "denilebo1";
             this.txtpassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txtpassword_KeyDown);
             // 
             // btnConnexion
