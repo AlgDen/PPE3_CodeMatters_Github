@@ -349,6 +349,7 @@
             this.Controls.Add(this.txtPrenom);
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.lblInfos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormVisiteur";
             this.Text = "FormVisiteur";
             this.Load += new System.EventHandler(this.FormVisiteur_Load);
