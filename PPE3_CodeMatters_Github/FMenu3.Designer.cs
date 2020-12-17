@@ -178,7 +178,7 @@
             this.TbFrais.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.TbFrais.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.TbFrais.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
-            this.TbFrais.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 192F));
+            this.TbFrais.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 193F));
             this.TbFrais.Controls.Add(this.Total3, 3, 3);
             this.TbFrais.Controls.Add(this.Total2, 3, 2);
             this.TbFrais.Controls.Add(this.Total1, 3, 1);
@@ -209,7 +209,7 @@
             // 
             this.Total3.AutoSize = true;
             this.Total3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total3.Location = new System.Drawing.Point(405, 131);
+            this.Total3.Location = new System.Drawing.Point(403, 131);
             this.Total3.Name = "Total3";
             this.Total3.Size = new System.Drawing.Size(37, 19);
             this.Total3.TabIndex = 15;
@@ -219,7 +219,7 @@
             // 
             this.Total2.AutoSize = true;
             this.Total2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total2.Location = new System.Drawing.Point(405, 84);
+            this.Total2.Location = new System.Drawing.Point(403, 84);
             this.Total2.Name = "Total2";
             this.Total2.Size = new System.Drawing.Size(37, 19);
             this.Total2.TabIndex = 14;
@@ -229,7 +229,7 @@
             // 
             this.Total1.AutoSize = true;
             this.Total1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total1.Location = new System.Drawing.Point(405, 41);
+            this.Total1.Location = new System.Drawing.Point(403, 41);
             this.Total1.Name = "Total1";
             this.Total1.Size = new System.Drawing.Size(37, 19);
             this.Total1.TabIndex = 13;
@@ -240,7 +240,7 @@
             this.LbTotal.AutoSize = true;
             this.LbTotal.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.LbTotal.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.LbTotal.Location = new System.Drawing.Point(405, 1);
+            this.LbTotal.Location = new System.Drawing.Point(403, 1);
             this.LbTotal.Name = "LbTotal";
             this.LbTotal.Size = new System.Drawing.Size(43, 19);
             this.LbTotal.TabIndex = 3;
@@ -251,7 +251,7 @@
             this.LbMU.AutoSize = true;
             this.LbMU.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.LbMU.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.LbMU.Location = new System.Drawing.Point(278, 1);
+            this.LbMU.Location = new System.Drawing.Point(276, 1);
             this.LbMU.Name = "LbMU";
             this.LbMU.Size = new System.Drawing.Size(74, 38);
             this.LbMU.TabIndex = 2;
@@ -262,7 +262,7 @@
             this.LbQuantité.AutoSize = true;
             this.LbQuantité.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.LbQuantité.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.LbQuantité.Location = new System.Drawing.Point(141, 1);
+            this.LbQuantité.Location = new System.Drawing.Point(140, 1);
             this.LbQuantité.Name = "LbQuantité";
             this.LbQuantité.Size = new System.Drawing.Size(69, 19);
             this.LbQuantité.TabIndex = 1;
@@ -315,7 +315,7 @@
             // 
             this.LbMUNuite.AutoSize = true;
             this.LbMUNuite.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbMUNuite.Location = new System.Drawing.Point(278, 41);
+            this.LbMUNuite.Location = new System.Drawing.Point(276, 41);
             this.LbMUNuite.Name = "LbMUNuite";
             this.LbMUNuite.Size = new System.Drawing.Size(37, 19);
             this.LbMUNuite.TabIndex = 7;
@@ -325,7 +325,7 @@
             // 
             this.LbRM.AutoSize = true;
             this.LbRM.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbRM.Location = new System.Drawing.Point(278, 84);
+            this.LbRM.Location = new System.Drawing.Point(276, 84);
             this.LbRM.Name = "LbRM";
             this.LbRM.Size = new System.Drawing.Size(37, 19);
             this.LbRM.TabIndex = 8;
@@ -335,7 +335,7 @@
             // 
             this.LbRS.AutoSize = true;
             this.LbRS.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbRS.Location = new System.Drawing.Point(278, 131);
+            this.LbRS.Location = new System.Drawing.Point(276, 131);
             this.LbRS.Name = "LbRS";
             this.LbRS.Size = new System.Drawing.Size(37, 19);
             this.LbRS.TabIndex = 9;
@@ -343,7 +343,7 @@
             // 
             // QtéNuité
             // 
-            this.QtéNuité.Location = new System.Drawing.Point(141, 44);
+            this.QtéNuité.Location = new System.Drawing.Point(140, 44);
             this.QtéNuité.Name = "QtéNuité";
             this.QtéNuité.Size = new System.Drawing.Size(38, 20);
             this.QtéNuité.TabIndex = 10;
@@ -351,7 +351,7 @@
             // 
             // QtéRM
             // 
-            this.QtéRM.Location = new System.Drawing.Point(141, 87);
+            this.QtéRM.Location = new System.Drawing.Point(140, 87);
             this.QtéRM.Name = "QtéRM";
             this.QtéRM.Size = new System.Drawing.Size(38, 20);
             this.QtéRM.TabIndex = 11;
@@ -359,7 +359,7 @@
             // 
             // QtéRS
             // 
-            this.QtéRS.Location = new System.Drawing.Point(141, 134);
+            this.QtéRS.Location = new System.Drawing.Point(140, 134);
             this.QtéRS.Name = "QtéRS";
             this.QtéRS.Size = new System.Drawing.Size(38, 20);
             this.QtéRS.TabIndex = 12;
@@ -417,7 +417,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label5.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label5.Location = new System.Drawing.Point(173, 1);
+            this.label5.Location = new System.Drawing.Point(172, 1);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(142, 34);
             this.label5.TabIndex = 18;
@@ -440,7 +440,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.52284F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.47716F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 264F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 266F));
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.cboVehicule, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.NbKm, 1, 1);
@@ -466,7 +466,7 @@
             // 
             // NbKm
             // 
-            this.NbKm.Location = new System.Drawing.Point(173, 39);
+            this.NbKm.Location = new System.Drawing.Point(172, 39);
             this.NbKm.Maximum = new decimal(new int[] {
             50000,
             0,
@@ -482,7 +482,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label8.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label8.Location = new System.Drawing.Point(332, 1);
+            this.label8.Location = new System.Drawing.Point(330, 1);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 19);
             this.label8.TabIndex = 21;
@@ -492,7 +492,7 @@
             // 
             this.Total5.AutoSize = true;
             this.Total5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total5.Location = new System.Drawing.Point(332, 36);
+            this.Total5.Location = new System.Drawing.Point(330, 36);
             this.Total5.Name = "Total5";
             this.Total5.Size = new System.Drawing.Size(37, 19);
             this.Total5.TabIndex = 24;
