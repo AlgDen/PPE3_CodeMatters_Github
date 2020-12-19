@@ -13,11 +13,17 @@ namespace PPE3_CodeMatters_Github
 {
     public partial class FormConnexion : Form
     {
+        // ToolTip au survol
+        ToolTip tooltip1 = new ToolTip();
+
+
         public FormConnexion()
         {
 
             InitializeComponent();
+
         }
+
 
         private void enter_KeyDown(object sender, KeyEventArgs e)
         {
@@ -58,6 +64,9 @@ namespace PPE3_CodeMatters_Github
 
         private void FormConnexion_Load(object sender, EventArgs e)
         {
+            picHide.Visible = false;
+            picShow.Visible = true;
+
 
         }
 
@@ -75,6 +84,42 @@ namespace PPE3_CodeMatters_Github
             {
                 btnConnexion_Click(this, new EventArgs());
             }
+        }
+
+        private void picHide_Click(object sender, EventArgs e)
+        {
+            txtpassword.PasswordChar = '*';
+            picHide.Visible = false;
+            picShow.Visible = true;
+        }
+
+        private void picShow_Click(object sender, EventArgs e)
+        {
+            txtpassword.PasswordChar = '\0';
+            picShow.Visible = false;
+            picHide.Visible = true;
+        }
+
+        private void picShow_MouseHover(object sender, EventArgs e)
+        {
+            // Définir le délai 
+            tooltip1.InitialDelay = 200;
+            tooltip1.ReshowDelay = 200;
+            tooltip1.ShowAlways = true;
+
+            // Texte à afficher
+            tooltip1.SetToolTip(this.picShow, "Montrer");
+        }
+
+        private void picHide_MouseHover(object sender, EventArgs e)
+        {
+            // Définir le délai 
+            tooltip1.InitialDelay = 200;
+            tooltip1.ReshowDelay = 200;
+            tooltip1.ShowAlways = true;
+
+            // Texte à afficher
+            tooltip1.SetToolTip(this.picHide, "Cacher");
         }
     }
 }

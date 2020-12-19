@@ -34,12 +34,17 @@
             this.btnQuitter = new System.Windows.Forms.Button();
             this.lblIdentifiant = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.lblGSB = new System.Windows.Forms.Label();
+            this.picHide = new System.Windows.Forms.PictureBox();
+            this.picShow = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picHide)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picShow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtIdentifiant
             // 
-            this.txtIdentifiant.Location = new System.Drawing.Point(103, 88);
+            this.txtIdentifiant.Location = new System.Drawing.Point(103, 108);
             this.txtIdentifiant.Name = "txtIdentifiant";
             this.txtIdentifiant.Size = new System.Drawing.Size(162, 20);
             this.txtIdentifiant.TabIndex = 7;
@@ -48,7 +53,7 @@
             // 
             // txtpassword
             // 
-            this.txtpassword.Location = new System.Drawing.Point(103, 131);
+            this.txtpassword.Location = new System.Drawing.Point(103, 151);
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(162, 20);
@@ -58,7 +63,7 @@
             // 
             // btnConnexion
             // 
-            this.btnConnexion.Location = new System.Drawing.Point(103, 178);
+            this.btnConnexion.Location = new System.Drawing.Point(103, 191);
             this.btnConnexion.Name = "btnConnexion";
             this.btnConnexion.Size = new System.Drawing.Size(75, 23);
             this.btnConnexion.TabIndex = 9;
@@ -68,7 +73,8 @@
             // 
             // btnQuitter
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(190, 178);
+            this.btnQuitter.FlatAppearance.BorderSize = 0;
+            this.btnQuitter.Location = new System.Drawing.Point(190, 191);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(75, 23);
             this.btnQuitter.TabIndex = 10;
@@ -79,7 +85,8 @@
             // lblIdentifiant
             // 
             this.lblIdentifiant.AutoSize = true;
-            this.lblIdentifiant.Location = new System.Drawing.Point(151, 72);
+            this.lblIdentifiant.BackColor = System.Drawing.Color.Transparent;
+            this.lblIdentifiant.Location = new System.Drawing.Point(151, 92);
             this.lblIdentifiant.Name = "lblIdentifiant";
             this.lblIdentifiant.Size = new System.Drawing.Size(62, 13);
             this.lblIdentifiant.TabIndex = 11;
@@ -88,21 +95,48 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(151, 115);
+            this.lblPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblPassword.Location = new System.Drawing.Point(151, 135);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(62, 13);
             this.lblPassword.TabIndex = 12;
             this.lblPassword.Text = "Password : ";
             // 
-            // lblGSB
+            // picHide
             // 
-            this.lblGSB.AutoSize = true;
-            this.lblGSB.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGSB.Location = new System.Drawing.Point(146, 18);
-            this.lblGSB.Name = "lblGSB";
-            this.lblGSB.Size = new System.Drawing.Size(66, 29);
-            this.lblGSB.TabIndex = 13;
-            this.lblGSB.Text = "GSB";
+            this.picHide.BackColor = System.Drawing.Color.Transparent;
+            this.picHide.Image = global::PPE3_CodeMatters_Github.Properties.Resources.hide;
+            this.picHide.Location = new System.Drawing.Point(239, 153);
+            this.picHide.Name = "picHide";
+            this.picHide.Size = new System.Drawing.Size(24, 16);
+            this.picHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picHide.TabIndex = 15;
+            this.picHide.TabStop = false;
+            this.picHide.Click += new System.EventHandler(this.picHide_Click);
+            this.picHide.MouseHover += new System.EventHandler(this.picHide_MouseHover);
+            // 
+            // picShow
+            // 
+            this.picShow.BackColor = System.Drawing.Color.Transparent;
+            this.picShow.Image = global::PPE3_CodeMatters_Github.Properties.Resources.show;
+            this.picShow.Location = new System.Drawing.Point(240, 153);
+            this.picShow.Name = "picShow";
+            this.picShow.Size = new System.Drawing.Size(23, 16);
+            this.picShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picShow.TabIndex = 14;
+            this.picShow.TabStop = false;
+            this.picShow.Click += new System.EventHandler(this.picShow_Click);
+            this.picShow.MouseHover += new System.EventHandler(this.picShow_MouseHover);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PPE3_CodeMatters_Github.Properties.Resources.gsb;
+            this.pictureBox1.Location = new System.Drawing.Point(1, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(365, 82);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
             // 
             // FormConnexion
             // 
@@ -110,18 +144,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(365, 232);
-            this.Controls.Add(this.lblGSB);
+            this.Controls.Add(this.picHide);
+            this.Controls.Add(this.picShow);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblIdentifiant);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnConnexion);
             this.Controls.Add(this.txtpassword);
             this.Controls.Add(this.txtIdentifiant);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormConnexion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulaire Connexion";
             this.Load += new System.EventHandler(this.FormConnexion_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picHide)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picShow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,7 +173,9 @@
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Label lblIdentifiant;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label lblGSB;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picShow;
+        private System.Windows.Forms.PictureBox picHide;
     }
 }
 

@@ -63,6 +63,26 @@ namespace PPE3_CodeMatters_Github.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gsb {
+            get {
+                object obj = ResourceManager.GetObject("gsb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hide {
+            get {
+                object obj = ResourceManager.GetObject("hide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lock_2 {
             get {
                 object obj = ResourceManager.GetObject("lock-2", resourceCulture);
@@ -96,6 +116,26 @@ namespace PPE3_CodeMatters_Github.Properties {
         internal static System.Drawing.Bitmap Sed_18_512 {
             get {
                 object obj = ResourceManager.GetObject("Sed-18-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap show {
+            get {
+                object obj = ResourceManager.GetObject("show", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap show1 {
+            get {
+                object obj = ResourceManager.GetObject("show1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
