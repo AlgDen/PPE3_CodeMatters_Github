@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Xml;
+using Windows.UI.Notifications;
+using Windows.Data.Xml.Dom;
 
 
 namespace PPE3_CodeMatters_Github
@@ -21,7 +24,6 @@ namespace PPE3_CodeMatters_Github
         public FormMenu()
         {
             InitializeComponent();
-
         }
 
         private void GestionDesComptesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -79,13 +81,13 @@ namespace PPE3_CodeMatters_Github
         {
             string name = ((Visiteur)bsNom.Current).nom;
             string firstName = ((Visiteur)bsNom.Current).prenom;
-            if(welcomeMessage() == ", laissez vos armes à l'entrée" || welcomeMessage() == ", nous vous attendions ° ͜ʖ ͡°")
+            if(welcomeMessage() == ", laissez vos armes à l'entrée." || welcomeMessage() == ", nous vous attendions ° ͜ʖ ͡°")
             {
                 this.Text = gsb + randomHello() + name + " " + firstName + welcomeMessage();
             }
             else if (welcomeMessage() == "Tiens, toi, oui toi ")
             {
-                this.Text = gsb + welcomeMessage() + name + " " + firstName + ", viens tenir ma bière.";
+                this.Text = gsb + welcomeMessage() + name + " " + firstName + ", tu nous as manqué tu sais ?";
             }
             else
             {

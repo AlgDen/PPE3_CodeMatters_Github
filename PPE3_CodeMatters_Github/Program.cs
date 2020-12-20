@@ -18,6 +18,15 @@ namespace PPE3_CodeMatters_Github
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Modele.init();
+
+            ToastWindow.Instance.ShowNotification(
+                "Deni le boss", 
+                "c'est moi le boss", 
+                "depuis l'extérieur", 
+                @"C:\Users\denia\Source\Repos\PPE3_CodeMatters_Github\PPE3_CodeMatters_Github\Resources\Untitled-11.png"
+            );
+
+
             Application.Run(new FormConnexion());
         }
     }
