@@ -19,13 +19,7 @@ namespace PPE3_CodeMatters_Github
             Application.SetCompatibleTextRenderingDefault(false);
             Modele.init();
 
-            ToastWindow.Instance.ShowNotification(
-                "Deni le boss", 
-                "c'est moi le boss", 
-                "depuis l'extérieur", 
-                @"C:\Users\denia\Source\Repos\PPE3_CodeMatters_Github\PPE3_CodeMatters_Github\Resources\Untitled-11.png"
-            );
-
+            var toast_window = ToastWindow.Instance;
 
             Application.Run(new FormConnexion());
         }

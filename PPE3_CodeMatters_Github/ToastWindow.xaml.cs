@@ -32,15 +32,17 @@ namespace PPE3_CodeMatters_Github
 
         public string APP_ID { get { return Properties.Resources.appname; } }
 
-        public ToastWindow()
+        private ToastWindow()
         {
             InitializeComponent();
-            ShowToastButton.Click += ShowToastButton_Click;
-
-            ToastWindow.instance = this;
         }
 
-        public void ShowNotification(string title, string txt1, string txt2 = null, string imagePath = null)
+        public static void ShowNotification(string title, string txt1 = null, string txt2 = null, string imagePath = null)
+        {
+            Instance.__ShowNotification(title, txt1, txt2, imagePath);
+        }
+
+        private void __ShowNotification(string title, string txt1 = null, string txt2 = null, string imagePath = null)
         {
 
             // Get a toast XML template
@@ -49,7 +51,10 @@ namespace PPE3_CodeMatters_Github
             // Fill in the text elements
             XmlNodeList stringElements = toastXml.GetElementsByTagName("text");
             stringElements[0].AppendChild(toastXml.CreateTextNode(title));
-            stringElements[1].AppendChild(toastXml.CreateTextNode(txt1));
+            if (txt1 != null)
+            {
+                stringElements[1].AppendChild(toastXml.CreateTextNode(txt1));
+            }
 
             if (txt2 != null)
             {
@@ -72,11 +77,6 @@ namespace PPE3_CodeMatters_Github
 
             // Show the toast. Be sure to specify the AppUserModelId on your application's shortcut!
             ToastNotificationManager.CreateToastNotifier(APP_ID).Show(toast);
-        }
-
-        private void ShowToastButton_Click(object sender, RoutedEventArgs e)
-        {
-            ShowNotification("Deni le boss", "c'est moi le boss");
         }
 
         private void ToastActivated(ToastNotification sender, object e)

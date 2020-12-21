@@ -55,7 +55,12 @@ namespace PPE3_CodeMatters_Github
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
-            bsNom.DataSource = Modele.ViConnecte();
+            bsVisiteur.DataSource = Modele.ViConnecte();
+
+            string nom = ((Visiteur)bsVisiteur.Current).nom;
+            string prenom = ((Visiteur)bsVisiteur.Current).prenom;
+
+            ToastWindow.ShowNotification(nom + " " + prenom, null, null, @"C:\Users\denia\Downloads\Deni\Ecole\2eme_annee\PPE3 GSB\images\logo\G.png");
         }
 
         private string welcomeMessage()
@@ -79,8 +84,8 @@ namespace PPE3_CodeMatters_Github
 
         private void bsNom_CurrentChanged(object sender, EventArgs e)
         {
-            string name = ((Visiteur)bsNom.Current).nom;
-            string firstName = ((Visiteur)bsNom.Current).prenom;
+            string name = ((Visiteur)bsVisiteur.Current).nom;
+            string firstName = ((Visiteur)bsVisiteur.Current).prenom;
             if(welcomeMessage() == ", laissez vos armes à l'entrée." || welcomeMessage() == ", nous vous attendions ° ͜ʖ ͡°")
             {
                 this.Text = gsb + randomHello() + name + " " + firstName + welcomeMessage();
