@@ -37,12 +37,12 @@ namespace PPE3_CodeMatters_Github
             InitializeComponent();
         }
 
-        public static void ShowNotification(string title, string txt1 = null, string txt2 = null, string imagePath = null)
+        public static void ShowNotification(string title = null, string txt1 = null, string txt2 = null, string imagePath = null)
         {
             Instance.__ShowNotification(title, txt1, txt2, imagePath);
         }
 
-        private void __ShowNotification(string title, string txt1 = null, string txt2 = null, string imagePath = null)
+        private void __ShowNotification(string title = null, string txt1 = null, string txt2 = null, string imagePath = null)
         {
 
             // Get a toast XML template
@@ -50,7 +50,12 @@ namespace PPE3_CodeMatters_Github
 
             // Fill in the text elements
             XmlNodeList stringElements = toastXml.GetElementsByTagName("text");
-            stringElements[0].AppendChild(toastXml.CreateTextNode(title));
+
+            if (title != null)
+            {
+                stringElements[0].AppendChild(toastXml.CreateTextNode(title));
+            }
+
             if (txt1 != null)
             {
                 stringElements[1].AppendChild(toastXml.CreateTextNode(txt1));

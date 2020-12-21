@@ -274,6 +274,8 @@
     <None Include="Resources\gsb.png" />
     <None Include="Resources\icons\show.png" />
     <None Include="Resources\icons\hide.png" />
+    <Content Include="Resources\favicon.ico" />
+    <Content Include="Resources\G.png" />
     <Content Include="Resources\Scripts\1.Création_Visiteurs-Secteurs-Regions.sql" />
     <Content Include="Resources\Scripts\10.Rapports de visite et Offrir.sql" />
     <Content Include="Resources\Scripts\2.Insertion_VisiteursCryptés.sql" />

@@ -26,20 +26,15 @@ namespace PPE3_CodeMatters_Github
             InitializeComponent();
         }
 
-        private void GestionDesComptesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormGCR open = new FormGCR();
-            open.FormBorderStyle = FormBorderStyle.None;
-            open.TopLevel = false;
-            panel1.Controls.Add(open);         
-            open.Show();
-        }
-
         private void QuitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormConnexion ouverture = new FormConnexion();
             this.Hide();
-            ouverture.ShowDialog();
+            var ouverture = new FormConnexion();
+            ouverture.FormClosed += (s, args) => this.Close();
+
+            ouverture.Show();
+
+            ToastWindow.ShowNotification(null, "À bientôt", null, @"C:\Users\denia\Downloads\Deni\Ecole\2eme_annee\PPE3 GSB\images\logo\G.png");
         }
 
         private void GestionDesVisiteursToolStripMenuItem_Click(object sender, EventArgs e)
@@ -61,9 +56,16 @@ namespace PPE3_CodeMatters_Github
             string prenom = ((Visiteur)bsVisiteur.Current).prenom;
 
             ToastWindow.ShowNotification(nom + " " + prenom, null, null, @"C:\Users\denia\Downloads\Deni\Ecole\2eme_annee\PPE3 GSB\images\logo\G.png");
+
+            this.FormClosed += new FormClosedEventHandler(applicationCanceled);
         }
 
-        private string welcomeMessage()
+        public void applicationCanceled(object sender, FormClosedEventArgs e)
+        {
+            ToastWindow.ShowNotification(null, "À bientôt", null, @"C:\Users\denia\Downloads\Deni\Ecole\2eme_annee\PPE3 GSB\images\logo\G.png");
+        }
+
+        private string welcomeMessage() // Message aléatoire de bienvenue
         {
             var random = new Random();
             List<string> welcome = new List<string>() { " se joint à la fête.", " est dans la place.", " vient d'attérir.", ", laissez vos armes à l'entrée.", " est là."
@@ -73,7 +75,7 @@ namespace PPE3_CodeMatters_Github
             return welcome[index];
         }
 
-        private string randomHello()
+        private string randomHello() // Message aléatoire de bienvenue
         {
             var random = new Random();
             List<string> hello = new List<string>() { "Hey ", "Bonjour ", "Bienvenue " };
